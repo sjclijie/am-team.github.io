@@ -1,0 +1,75 @@
+<h3 id="use-">Use <code>开始使用</code></h3>
+<h4 id="include-">include <code>引入方式</code></h4>
+<ul>
+<li><p><strong>2种引入方式</strong></p>
+<ul>
+<li><strong>线上源文件</strong></li>
+<li><strong>SPM3模块</strong><h4 id="cdn-source-">cdn-source <code>线上源文件</code></h4>
+</li>
+</ul>
+</li>
+<li><p><strong>1. 引入AMUI9.0推荐库</strong></p>
+</li>
+</ul>
+<p>CDN源文件地址：<a href="https://a.alipayobjects.com/amui/dpl/9.0.0.2/amui.css">https://a.alipayobjects.com/amui/dpl/9.0.0.2/amui.css</a></p>
+<p>相关代码：</p>
+<pre><code class="lang-html">&lt;link <span class="hljs-variable">href=</span><span class="hljs-string">"https://a.alipayobjects.com/amui/dpl/9.0.0.2/amui.css"</span> <span class="hljs-variable">rel=</span><span class="hljs-string">"stylesheet"</span>/&gt;
+</code></pre>
+<p>AMUI9.0库已集成组件查看，<a href="#pack" title="AMUI9.0.0.2库已集成组件查看">传送门</a></p>
+<ul>
+<li><strong>2. 引入单独某个模块</strong></li>
+</ul>
+<p>以button为例：<br><a href="https://a.alipayobjects.com/amui/dpl/9.0.0.2/">https://a.alipayobjects.com/amui/dpl/9.0.0.2/</a><span style="color:#ff7300;font-weight:bold;">widget/button.css</span></p>
+<p><span style="color:#ff7300;font-weight:bold;">橙色部分</span>，可以按照对应组件路径修改</p>
+<p>某些模块有一定依赖，如widget/message，依赖icon/message</p>
+<pre><code><span class="hljs-string">https:</span><span class="hljs-comment">//a.alipayobjects.com/amui/dpl/9.0.0.2/icon/message.css</span>
+<span class="hljs-string">https:</span><span class="hljs-comment">//a.alipayobjects.com/amui/dpl/9.0.0.2/widget/message.css</span>
+</code></pre><ul>
+<li><strong>3. 多模块合并</strong></li>
+</ul>
+<p>使用CDN的拼接合并功能：</p>
+<pre><code><span class="hljs-string">https:</span><span class="hljs-comment">//a.alipayobjects.com/amui/dpl/9.0.0.2/??amui.css,icon/message.css,widget/message.css</span>
+</code></pre><h4 id="spm3-module-spm3-">spm3-module <code>SPM3模块</code></h4>
+<ul>
+<li><strong>1. 先安装本模块</strong></li>
+</ul>
+<p>需要安装spm3</p>
+<pre><code>spm <span class="hljs-operator"><span class="hljs-keyword">install</span> ant-ui <span class="hljs-comment">--save</span></span>
+</code></pre><ul>
+<li><strong>2. 引用完整样式库</strong></li>
+</ul>
+<pre><code class="lang-css"><span class="hljs-at_rule">@<span class="hljs-keyword">import</span> <span class="hljs-string">'ant-ui'</span></span>;
+</code></pre>
+<ul>
+<li><strong>3. 引入单独某个模块</strong></li>
+</ul>
+<pre><code class="lang-css"><span class="hljs-at_rule">@<span class="hljs-keyword">import</span> <span class="hljs-string">'ant-ui/widget/button.css'</span></span>;
+</code></pre>
+<ul>
+<li><strong>4. 多模块合并</strong></li>
+</ul>
+<pre><code class="lang-css"><span class="hljs-at_rule">@<span class="hljs-keyword">import</span> <span class="hljs-string">'ant-ui/amui.css'</span></span>;
+<span class="hljs-at_rule">@<span class="hljs-keyword">import</span> <span class="hljs-string">'ant-ui/icon/message.css'</span></span>;
+<span class="hljs-at_rule">@<span class="hljs-keyword">import</span> <span class="hljs-string">'ant-ui/widget/message.css'</span></span>;
+</code></pre>
+<h4 id="html-templet-html-">html-templet <code>推荐HTML</code></h4>
+<pre><code class="lang-html"><span class="hljs-doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">meta</span> <span class="hljs-attribute">charset</span>=<span class="hljs-value">"utf-8"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">title</span>&gt;</span>Examples<span class="hljs-tag">&lt;/<span class="hljs-title">title</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">meta</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"description"</span> <span class="hljs-attribute">content</span>=<span class="hljs-value">""</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">meta</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"keywords"</span> <span class="hljs-attribute">content</span>=<span class="hljs-value">""</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">meta</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"apple-mobile-web-app-capable"</span> <span class="hljs-attribute">content</span>=<span class="hljs-value">"yes"</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">meta</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"apple-mobile-web-app-status-bar-style"</span> <span class="hljs-attribute">content</span>=<span class="hljs-value">"black"</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">meta</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"format-detection"</span> <span class="hljs-attribute">content</span>=<span class="hljs-value">"telephone=no"</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">meta</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"format-detection"</span> <span class="hljs-attribute">content</span>=<span class="hljs-value">"email=no"</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">meta</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"viewport"</span>
+          <span class="hljs-attribute">content</span>=<span class="hljs-value">"width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0"</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">link</span> <span class="hljs-attribute">rel</span>=<span class="hljs-value">"stylesheet"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text/css"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"https://a.alipayobjects.com/amui/dpl/9.0.0.2/amui.css"</span> <span class="hljs-attribute">media</span>=<span class="hljs-value">"all"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">body</span> <span class="hljs-attribute">ontouchstart</span>=<span class="hljs-value">""</span>&gt;</span>
+    <span class="hljs-comment">&lt;!--你的html页面代码--&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">html</span>&gt;</span>
+</code></pre>

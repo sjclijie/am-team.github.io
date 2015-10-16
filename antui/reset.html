@@ -1,0 +1,62 @@
+<h3 id="reset-reset-or-normalize-">Reset <code>Reset or Normalize</code></h3>
+<h4 id="usage-">usage <code>使用方法</code></h4>
+<ul>
+<li><span class="widget-build build-yes"><strong>AntUI默认已集成</strong></span></li>
+<li><span class="widget-mod"><strong>模块名：base/reset</strong></span></li>
+</ul>
+<p><a href="../8.7/nav.html#use" title="使用方式">使用方式</a></p>
+<h4 id="issue-">issue <code>论点中立</code></h4>
+<p>虽然文件名为reset，其实只是精简版的reset。</p>
+<p>reset和normalize的区别可以看出，一个是控制倾向，一个是自然倾向。</p>
+<p>精简版reset中，主要保留的是一些布局类reset（如margin:0），去掉了控制倾向比较强的部分。</p>
+<p>同时，一些不常用的html5标签，也被去除。</p>
+<ul>
+<li><strong>改造的目标</strong><ul>
+<li><strong>最低控制</strong> 用户没有重置类样式时，也能保证基本显示</li>
+<li><strong>自由兼容</strong> 使用者可以自由额外引入reset or normalize，而不用担心冲突</li>
+<li><strong>节约代码</strong> 去掉一些不必要的代码，节约是良好的美德</li>
+</ul>
+</li>
+</ul>
+<h4 id="source-css-">source <code>css代码</code></h4>
+<pre><code class="lang-css">*, *<span class="hljs-pseudo">:before</span>, *<span class="hljs-pseudo">:after</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">-webkit-tap-highlight-color</span>:<span class="hljs-value"><span class="hljs-function">rgba</span>(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>)</span></span>;
+}</span>
+
+<span class="hljs-tag">body</span>, <span class="hljs-tag">div</span>, <span class="hljs-tag">dl</span>, <span class="hljs-tag">dt</span>, <span class="hljs-tag">dd</span>, <span class="hljs-tag">ul</span>, <span class="hljs-tag">ol</span>, <span class="hljs-tag">li</span>, <span class="hljs-tag">h1</span>, <span class="hljs-tag">h2</span>, <span class="hljs-tag">h3</span>,
+<span class="hljs-tag">h4</span>, <span class="hljs-tag">h5</span>, <span class="hljs-tag">h6</span>, <span class="hljs-tag">form</span>, <span class="hljs-tag">fieldset</span>, <span class="hljs-tag">legend</span>,
+<span class="hljs-tag">input</span>, <span class="hljs-tag">textarea</span>, <span class="hljs-tag">p</span>, <span class="hljs-tag">blockquote</span>, <span class="hljs-tag">th</span>, <span class="hljs-tag">td</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">margin</span>:<span class="hljs-value"><span class="hljs-number">0</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">padding</span>:<span class="hljs-value"><span class="hljs-number">0</span></span></span>;
+}</span>
+
+<span class="hljs-tag">table</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">border-collapse</span>:<span class="hljs-value">collapse</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">border-spacing</span>:<span class="hljs-value"><span class="hljs-number">0</span></span></span>;
+}</span>
+
+<span class="hljs-tag">fieldset</span>, <span class="hljs-tag">img</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">border</span>:<span class="hljs-value"><span class="hljs-number">0</span></span></span>;
+}</span>
+
+<span class="hljs-tag">li</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">list-style</span>:<span class="hljs-value">none</span></span>;
+}</span>
+
+<span class="hljs-tag">caption</span>, <span class="hljs-tag">th</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">text-align</span>:<span class="hljs-value">left</span></span>;
+}</span>
+
+<span class="hljs-rule"><span class="hljs-attribute">q</span>:<span class="hljs-value">before,
+q:after {
+    content:<span class="hljs-string">""</span></span></span>;
+}
+
+<span class="hljs-rule"><span class="hljs-attribute">input</span>:<span class="hljs-value">password {
+    ime-mode:disabled</span></span>;
+}
+
+*<span class="hljs-pseudo">:focus</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">outline</span>:<span class="hljs-value">none</span></span>;
+}</span>
+</code></pre>

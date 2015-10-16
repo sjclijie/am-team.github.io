@@ -81,11 +81,7 @@
             </li>
             
             <li>
-                <a href="../amui/amui-doc.html">接口文档</a>
-            </li>
-            
-            <li>
-                <a href="https://github.com/am-team/amUI/../">Github</a>
+                <a href="../antui/nav.html">接口文档</a>
             </li>
             
         </ul>
@@ -93,21 +89,21 @@
     </li>
     
     <li>
-        <a  archiveId = "amj"
-        href="../amj/about.html">
-        AMJ </a>
+        <a  archiveId = "amutil"
+        href="../amutil/about.html">
+        AMUtil </a>
         
         <ul class="nav-sub">
             <li>
-                <a href="../amj/about.html">关于AMJ</a>
+                <a href="../amutil/about.html">关于AMUtil</a>
             </li>
             
             <li>
-                <a href="../amj/aj-doc.html">接口文档</a>
+                <a href="../amutil/au-doc.html">接口文档</a>
             </li>
             
             <li>
-                <a href="https://github.com/am-team/amJS/../">Github</a>
+                <a href="https://github.com/am-team/amUtil/../">Github</a>
             </li>
             
         </ul>
@@ -196,7 +192,6 @@
     <div class="threecol meta">
     </div>
     
-
  
     <div class="ninecol content">
         <div class="document">
@@ -1232,7 +1227,7 @@ function callFetchContacts(){
     navigator.contacts.find(fields, onSuccess, onError,options);
     }
 
-</pre><h2 id="ios-safari-事件委托BUG">iOS safari 事件委托BUG</h2><p>safari对DOM中元素的冒泡机制有个奇葩的BUG，仅限iOS版才会触发~~~</p>
+</pre><h2 id="ios-safari-bug-总结">iOS safari BUG 总结</h2><p>safari对DOM中元素的冒泡机制有个奇葩的BUG，仅限iOS版才会触发~~~</p>
 <p>BUG重现用例请见线上DEMO: <a href="http://jsfiddle.net/e75od2bb/34/">地址</a></p>
 <h3 id="bug表现与规避">bug表现与规避</h3><p>在进行事件委托时，如果将未存在于DOM的元素事件直接委托到body上的话,会导致事件委托失效，调试结果为事件响应到body子元素为止，既没有冒泡到body上，也没有被body所捕获。但如果事件是DOM元素本身具有的，则不会触发bug。换而言之，只有元素的非标准事件（比如click事件之于div）才会触发此bug。</p>
 <p>因为bug是由safari的事件解析机制导致，无法修复，但是有多种手段可以规避</p>
@@ -1250,9 +1245,7 @@ function callFetchContacts(){
     </div>
 </div>
 
-
  
-
  
     </div>
 </div>
@@ -1341,7 +1334,7 @@ function callFetchContacts(){
     //                trigger: '#search',
     //                filter:"stringMatch",
     //                dataSource: [
-    //"../about/about.html","dev-exp-doc.html","mobile-platform-grade.html","website-guild.html","../amj/about.html","../amj/aj-doc.html","../amteam/join.html","../amui/about.html","../amui/amui-doc.html","../amw/about.html","../amw/aw-doc.html","../default.html","../h5container/ab-doc.html","../h5container/about.html","../h5container/jsapi-doc.html","../wiki/bookmark.html",
+    //"../about/about.html","dev-exp-doc.html","dev-guild.html","mobile-platform-grade.html","website-guild.html","../amteam/join.html","../amui/about.html","../amui/amui-doc.html","../amutil/about.html","../amutil/au-doc.html","../amw/about.html","../amw/aw-doc.html","../default.html","../h5container/ab-doc.html","../h5container/about.html","../h5container/jsapi-doc.html","../wiki/bookmark.html",
     //                ]
     //            }).render().on('itemSelect',function  (data) {
     //              window.location = data.matchKey;

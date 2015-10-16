@@ -1,0 +1,130 @@
+<h3 id="search-">Search <code>搜索</code></h3>
+<h4 id="preview-">preview <code>效果预览</code></h4>
+<div class="dpl-demo-wrap dpl-demo-search"><div class="dpl-demo">
+<div class="am-search am-input-autoclear" am-flat="flat">
+    <div class="am-search-input" am-mode="search-start">
+        <div class="am-search-icon">
+            <i class="am-icon" am-mode="search" ></i>
+        </div>
+        <input class="am-search-value"  type="text" placeholder="搜索" value="">
+        <div class="am-search-clear"><i class="am-icon-clear am-icon" am-mode="clear clear-tiny"></i></div>
+    </div>
+    <div class="am-search-button">
+        <button type="button" disabled="disabled">取消</button>
+    </div>
+</div>
+<div class="am-search am-input-autoclear">
+    <div class="am-search-input" >
+        <div class="am-search-icon"><i class="am-icon" am-mode="search"></i></div>
+        <input class="am-search-value" type="text" placeholder="搜索" value="">
+        <div class="am-search-clear"><i class="am-icon-clear am-icon" am-mode="clear clear-tiny"></i></div>
+    </div>
+    <div class="am-search-button">
+        <button type="button" disabled="disabled">取消</button>
+    </div>
+</div>
+<div class="am-search am-input-autoclear">
+    <div class="am-search-input">
+        <div class="am-search-icon"><i class="am-icon" am-mode="search"></i></div>
+        <input class="am-search-value" type="text" placeholder="搜索" value="搜索内容">
+        <div class="am-search-clear"><i class="am-icon-clear am-icon" am-mode="clear clear-tiny"></i></div>
+    </div>
+    <div class="am-search-button">
+        <button type="button" disabled="disabled">取消</button>
+    </div>
+</div>
+</div></div>
+
+
+
+<h4 id="usage-">usage <code>使用方法</code></h4>
+<ul>
+<li><span class="widget-build build-no"><strong>AntUI默认未集成</strong></span></li>
+<li><span class="widget-mod"><strong>模块名：widget/search</strong></span></li>
+<li><span class="widget-refer"><strong>必选依赖</strong></span><ul>
+<li><strong>widget/button（按钮，amui包已集成）</strong></li>
+<li><strong>icon/clear（清除icon，amui包已集成）</strong></li>
+<li><strong>amui.js（输入清除逻辑控制，需单独引入）</strong></li>
+</ul>
+</li>
+</ul>
+<p><a href="../8.7/nav.html#use" title="使用方式">使用方式</a></p>
+<h4 id="default-">default <code>基础样式</code></h4>
+<div class="dpl-demo-wrap dpl-demo-search"><div class="dpl-demo">
+<div class="am-search am-input-autoclear" am-flat="flat">
+    <div class="am-search-input" am-mode="search-start">
+        <div class="am-search-icon">
+            <i class="am-icon" am-mode="search" ></i>
+        </div>
+        <input class="am-search-value"  type="text" placeholder="搜索" value="">
+        <div class="am-search-clear"><i class="am-icon-clear am-icon" am-mode="clear clear-tiny"></i></div>
+    </div>
+    <div class="am-search-button">
+        <button type="button" disabled="disabled">取消</button>
+    </div>
+</div>
+</div></div>
+
+<pre><code class="lang-html">&lt;div <span class="hljs-class"><span class="hljs-keyword">class</span>=</span><span class="hljs-string">"am-search am-input-autoclear"</span> am-flat=<span class="hljs-string">"flat"</span>&gt;
+    &lt;div <span class="hljs-class"><span class="hljs-keyword">class</span>=</span><span class="hljs-string">"am-search-input"</span> am-mode=<span class="hljs-string">"search-start"</span>&gt;
+        &lt;div <span class="hljs-class"><span class="hljs-keyword">class</span>=</span><span class="hljs-string">"am-search-icon"</span>&gt;
+            &lt;i <span class="hljs-class"><span class="hljs-keyword">class</span>=</span><span class="hljs-string">"am-icon"</span> am-mode=<span class="hljs-string">"search"</span> &gt;&lt;/i&gt;
+        &lt;/div&gt;
+        &lt;input <span class="hljs-class"><span class="hljs-keyword">class</span>=</span><span class="hljs-string">"am-search-value"</span>  <span class="hljs-class"><span class="hljs-keyword">type</span>=</span><span class="hljs-string">"text"</span> placeholder=<span class="hljs-string">"搜索"</span> value=<span class="hljs-string">""</span>&gt;
+        &lt;div <span class="hljs-class"><span class="hljs-keyword">class</span>=</span><span class="hljs-string">"am-search-clear"</span>&gt;&lt;i <span class="hljs-class"><span class="hljs-keyword">class</span>=</span><span class="hljs-string">"am-icon-clear am-icon"</span> am-mode=<span class="hljs-string">"clear clear-tiny"</span>&gt;&lt;/i&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div <span class="hljs-class"><span class="hljs-keyword">class</span>=</span><span class="hljs-string">"am-search-button"</span>&gt;
+        &lt;button <span class="hljs-class"><span class="hljs-keyword">type</span>=</span><span class="hljs-string">"button"</span> disabled=<span class="hljs-string">"disabled"</span>&gt;取消&lt;/button&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<h4 id="default-">default <code>获得焦点样式</code></h4>
+<div class="dpl-demo-wrap dpl-demo-search"><div class="dpl-demo">
+<div class="am-search am-input-autoclear">
+    <div class="am-search-input" >
+        <div class="am-search-icon"><i class="am-icon" am-mode="search"></i></div>
+        <input class="am-search-value" type="text" placeholder="搜索" value="">
+        <div class="am-search-clear"><i class="am-icon-clear am-icon" am-mode="clear clear-tiny"></i></div>
+    </div>
+    <div class="am-search-button">
+        <button type="button" disabled="disabled">取消</button>
+    </div>
+</div>
+</div></div>
+
+<pre><code class="lang-html">&lt;div <span class="hljs-class"><span class="hljs-keyword">class</span>=</span><span class="hljs-string">"am-search am-input-autoclear"</span>&gt;
+    &lt;div <span class="hljs-class"><span class="hljs-keyword">class</span>=</span><span class="hljs-string">"am-search-input"</span> &gt;
+        &lt;div <span class="hljs-class"><span class="hljs-keyword">class</span>=</span><span class="hljs-string">"am-search-icon"</span>&gt;&lt;i <span class="hljs-class"><span class="hljs-keyword">class</span>=</span><span class="hljs-string">"am-icon"</span> am-mode=<span class="hljs-string">"search"</span>&gt;&lt;/i&gt;&lt;/div&gt;
+        &lt;input <span class="hljs-class"><span class="hljs-keyword">class</span>=</span><span class="hljs-string">"am-search-value"</span> <span class="hljs-class"><span class="hljs-keyword">type</span>=</span><span class="hljs-string">"text"</span> placeholder=<span class="hljs-string">"搜索"</span> value=<span class="hljs-string">""</span>&gt;
+        &lt;div <span class="hljs-class"><span class="hljs-keyword">class</span>=</span><span class="hljs-string">"am-search-clear"</span>&gt;&lt;i <span class="hljs-class"><span class="hljs-keyword">class</span>=</span><span class="hljs-string">"am-icon-clear am-icon"</span> am-mode=<span class="hljs-string">"clear clear-tiny"</span>&gt;&lt;/i&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div <span class="hljs-class"><span class="hljs-keyword">class</span>=</span><span class="hljs-string">"am-search-button"</span>&gt;
+        &lt;button <span class="hljs-class"><span class="hljs-keyword">type</span>=</span><span class="hljs-string">"button"</span> disabled=<span class="hljs-string">"disabled"</span>&gt;取消&lt;/button&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<h4 id="input-words-">input-words <code>内容已填</code></h4>
+<div class="dpl-demo-wrap dpl-demo-search"><div class="dpl-demo">
+<div class="am-search am-input-autoclear">
+    <div class="am-search-input">
+        <div class="am-search-icon"><i class="am-icon" am-mode="search"></i></div>
+        <input class="am-search-value" type="text" placeholder="搜索" value="搜索内容">
+        <div class="am-search-clear"><i class="am-icon-clear am-icon" am-mode="clear clear-tiny"></i></div>
+    </div>
+    <div class="am-search-button">
+        <button type="button" disabled="disabled">取消</button>
+    </div>
+</div>
+</div></div>
+
+<pre><code class="lang-html">&lt;div <span class="hljs-class"><span class="hljs-keyword">class</span>=</span><span class="hljs-string">"am-search am-input-autoclear"</span>&gt;
+    &lt;div <span class="hljs-class"><span class="hljs-keyword">class</span>=</span><span class="hljs-string">"am-search-input"</span>&gt;
+        &lt;div <span class="hljs-class"><span class="hljs-keyword">class</span>=</span><span class="hljs-string">"am-search-icon"</span>&gt;&lt;i <span class="hljs-class"><span class="hljs-keyword">class</span>=</span><span class="hljs-string">"am-icon"</span> am-mode=<span class="hljs-string">"search"</span>&gt;&lt;/i&gt;&lt;/div&gt;
+        &lt;input <span class="hljs-class"><span class="hljs-keyword">class</span>=</span><span class="hljs-string">"am-search-value"</span> <span class="hljs-class"><span class="hljs-keyword">type</span>=</span><span class="hljs-string">"text"</span> placeholder=<span class="hljs-string">"搜索"</span> value=<span class="hljs-string">"搜索内容"</span>&gt;
+        &lt;div <span class="hljs-class"><span class="hljs-keyword">class</span>=</span><span class="hljs-string">"am-search-clear"</span>&gt;&lt;i <span class="hljs-class"><span class="hljs-keyword">class</span>=</span><span class="hljs-string">"am-icon-clear am-icon"</span> am-mode=<span class="hljs-string">"clear clear-tiny"</span>&gt;&lt;/i&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div <span class="hljs-class"><span class="hljs-keyword">class</span>=</span><span class="hljs-string">"am-search-button"</span>&gt;
+        &lt;button <span class="hljs-class"><span class="hljs-keyword">type</span>=</span><span class="hljs-string">"button"</span> disabled=<span class="hljs-string">"disabled"</span>&gt;取消&lt;/button&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>

@@ -1,0 +1,172 @@
+<h3 id="button-">Button <code>按钮</code></h3>
+<h4 id="preview-">preview <code>效果预览</code></h4>
+<div class="dpl-demo-wrap dpl-demo-button"><div class="dpl-demo">
+ <button type="button" class="am-button" am-mode="blue 43px">蓝色43px按钮</button>
+<button type="button" class="am-button" am-mode="white 43px">白色43px按钮</button>
+<button type="button" class="am-button" am-mode="red 43px">红色43px按钮</button>
+<a href="button" class="am-button" am-mode="blue 43px">蓝色 按钮 43px</a>
+<a href="button" class="am-button" am-mode="white 43px">白色按钮 43px</a>
+<a type="button" class="am-button" am-mode="red 43px">红色43px按钮</a>
+<button type="button" disabled="disabled" class="am-button" am-mode="white disabled 43px">不可用点按钮</button>
+<button type="button" class="am-button" am-mode="flat warn 43px">警示按钮</button>
+<button type="button" disabled="disabled" class="am-button" am-mode="flat warn disabled 43px">警示按钮不可点</button>
+<a href="button" class="am-button" am-mode="tiny light inline">最小号按钮</a>
+<button href="button" class="am-button" am-mode="tiny inline blue">最小号按钮</button>
+<div class="am-flexbox" am-mode="average">
+<div class="am-flexbox-item">
+ <button type="button" class="am-button" am-mode="white 43px">次按钮</button>
+</div>
+<div class="am-flexbox-item">
+<button type="button" class="am-button" am-mode="blue 43px">主按钮</button>
+</div>
+</div>
+<div class="am-flexbox" am-mode="average">
+<div class="am-flexbox-item">
+<button type="button" class="am-button" am-mode="light small white">次按钮</button>
+</div>
+<div class="am-flexbox-item">
+<button type="button" class="am-button" am-mode="light small">主按钮</button>
+</div>
+</div>
+</div></div>
+
+
+
+<h4 id="usage-">usage <code>使用说明</code></h4>
+<ul>
+<li><span class="widget-build build-yes"><strong>AntUI默认已集成</strong></span></li>
+<li><p><span class="widget-mod"><strong>模块名：widget/button</strong></span></p>
+</li>
+<li><p><span class="widget-refer"><strong>可选依赖：util/flexbox（布局，amui包已集成）</strong></span></p>
+</li>
+</ul>
+<p><a href="../8.7/nav.html#use" title="使用方式">使用方式</a></p>
+<h4 id="default-">default <code>基础样式</code></h4>
+<ul>
+<li><strong> 基础特征 </strong></li>
+<li><strong>颜色</strong>蓝色(blue)</li>
+<li><strong>尺寸</strong>高度(43px)，宽度100%</li>
+<li><strong>标签</strong>建议button或者a</li>
+</ul>
+<div class="dpl-demo-wrap dpl-demo-button"><div class="dpl-demo">
+<a href="button" class="am-button" am-mode="blue 43px">蓝色按钮 43px</a>
+<button type="button" class="am-button" am-mode="blue 43px">蓝色43px按钮</button>
+</div></div>
+
+<pre><code class="lang-html">&lt;a <span class="hljs-variable">href=</span><span class="hljs-string">"button"</span> <span class="hljs-variable">class=</span><span class="hljs-string">"am-button"</span> <span class="hljs-variable">am-mode=</span><span class="hljs-string">"blue 43px"</span>&gt;蓝色按钮 <span class="hljs-number">43</span>px&lt;/a&gt;
+&lt;button <span class="hljs-variable">type=</span><span class="hljs-string">"button"</span> <span class="hljs-variable">class=</span><span class="hljs-string">"am-button"</span> <span class="hljs-variable">am-mode=</span><span class="hljs-string">"blue 43px"</span>&gt;蓝色<span class="hljs-number">43</span>px按钮&lt;/button&gt;
+</code></pre>
+<h4 id="color-">color <code>颜色扩展</code></h4>
+<ul>
+<li><strong>可选颜色(4种)：</strong></li>
+<li><strong>蓝色</strong>(mode值：blue，9.0推荐使用)</li>
+<li><strong>白色</strong>(mode值：white，9.0推荐使用)</li>
+<li><strong>红色</strong>(mode值：red，9.0推荐使用)</li>
+<li><strong>黑色</strong>(mode值：black，不推荐)</li>
+</ul>
+<div class="dpl-demo-wrap dpl-demo-button"><div class="dpl-demo">
+<button type="button" class="am-button" am-mode="blue 43px">蓝色按钮</button>
+<button type="button" class="am-button" am-mode="red 43px">红色按钮</button>
+<button type="button" class="am-button" am-mode="white 43px">白色按钮</button>
+<button type="button" class="am-button" am-mode="black 43px">黑色按钮</button>
+</div></div>
+
+<pre><code class="lang-html">&lt;button <span class="hljs-class"><span class="hljs-keyword">type</span>=</span><span class="hljs-string">"button"</span> <span class="hljs-class"><span class="hljs-keyword">class</span>=</span><span class="hljs-string">"am-button"</span> am-mode=<span class="hljs-string">"blue 43px"</span>&gt;蓝色按钮&lt;/button&gt;
+&lt;button <span class="hljs-class"><span class="hljs-keyword">type</span>=</span><span class="hljs-string">"button"</span> <span class="hljs-class"><span class="hljs-keyword">class</span>=</span><span class="hljs-string">"am-button"</span> am-mode=<span class="hljs-string">"red 43px"</span>&gt;红色按钮&lt;/button&gt;
+&lt;button <span class="hljs-class"><span class="hljs-keyword">type</span>=</span><span class="hljs-string">"button"</span> <span class="hljs-class"><span class="hljs-keyword">class</span>=</span><span class="hljs-string">"am-button"</span> am-mode=<span class="hljs-string">"white 43px"</span>&gt;白色按钮&lt;/button&gt;
+&lt;button <span class="hljs-class"><span class="hljs-keyword">type</span>=</span><span class="hljs-string">"button"</span> <span class="hljs-class"><span class="hljs-keyword">class</span>=</span><span class="hljs-string">"am-button"</span> am-mode=<span class="hljs-string">"black 43px"</span>&gt;黑色按钮&lt;/button&gt;
+</code></pre>
+<h4 id="size-">size <code>尺寸扩展</code></h4>
+<ul>
+<li><strong>可选尺寸(5种)：</strong></li>
+<li><strong>26px</strong>(mode值：tiny)</li>
+<li><strong>31px</strong>(mode值：little)</li>
+<li><strong>36px</strong>(mode值：small)</li>
+<li><strong>40px</strong>(mode值：middle)</li>
+<li><strong>42px</strong>(default)</li>
+<li><strong>43px</strong>(新增样式)</li>
+</ul>
+<div class="dpl-demo-wrap dpl-demo-button"><div class="dpl-demo">
+<button type="button" class="am-button" am-mode="red tiny">红色26px按钮</button>
+<button type="button" class="am-button" am-mode="white little">白色31px按钮</button>
+<button type="button" class="am-button" am-mode="black small">黑色36px按钮</button>
+<button type="button" class="am-button" am-mode="blue middle">蓝色40px按钮</button>
+<button type="button" class="am-button" am-mode="blue">默认42px按钮</button>
+<button type="button" class="am-button" am-mode="blue 43px">蓝色43px按钮</button>
+</div></div>
+
+<pre><code class="lang-html">&lt;button <span class="hljs-class"><span class="hljs-keyword">type</span>=</span><span class="hljs-string">"button"</span> <span class="hljs-class"><span class="hljs-keyword">class</span>=</span><span class="hljs-string">"am-button"</span> am-mode=<span class="hljs-string">"red tiny"</span>&gt;红色<span class="hljs-number">26</span>px按钮&lt;/button&gt;
+&lt;button <span class="hljs-class"><span class="hljs-keyword">type</span>=</span><span class="hljs-string">"button"</span> <span class="hljs-class"><span class="hljs-keyword">class</span>=</span><span class="hljs-string">"am-button"</span> am-mode=<span class="hljs-string">"white little"</span>&gt;白色<span class="hljs-number">31</span>px按钮&lt;/button&gt;
+&lt;button <span class="hljs-class"><span class="hljs-keyword">type</span>=</span><span class="hljs-string">"button"</span> <span class="hljs-class"><span class="hljs-keyword">class</span>=</span><span class="hljs-string">"am-button"</span> am-mode=<span class="hljs-string">"black small"</span>&gt;黑色<span class="hljs-number">36</span>px按钮&lt;/button&gt;
+&lt;button <span class="hljs-class"><span class="hljs-keyword">type</span>=</span><span class="hljs-string">"button"</span> <span class="hljs-class"><span class="hljs-keyword">class</span>=</span><span class="hljs-string">"am-button"</span> am-mode=<span class="hljs-string">"blue middle"</span>&gt;蓝色<span class="hljs-number">40</span>px按钮&lt;/button&gt;
+&lt;button <span class="hljs-class"><span class="hljs-keyword">type</span>=</span><span class="hljs-string">"button"</span> <span class="hljs-class"><span class="hljs-keyword">class</span>=</span><span class="hljs-string">"am-button"</span> am-mode=<span class="hljs-string">"blue"</span>&gt;默认<span class="hljs-number">42</span>px按钮&lt;/button&gt;
+&lt;button <span class="hljs-class"><span class="hljs-keyword">type</span>=</span><span class="hljs-string">"button"</span> <span class="hljs-class"><span class="hljs-keyword">class</span>=</span><span class="hljs-string">"am-button"</span> am-mode=<span class="hljs-string">"blue 43px"</span>&gt;蓝色<span class="hljs-number">43</span>px按钮&lt;/button&gt;
+</code></pre>
+<h4 id="disabled-">disabled <code>按钮可用性</code></h4>
+<ul>
+<li><strong>可选类型(3种)：</strong></li>
+<li><strong>disabled</strong>(通用不可用，最常用)</li>
+<li><strong>blue-disabled</strong>(不推荐，少数场景使用)</li>
+<li><strong>red-disabled</strong>(不推荐，少数场景使用)</li>
+</ul>
+<div class="dpl-demo-wrap dpl-demo-button"><div class="dpl-demo">
+<button type="button" disabled="disabled" class="am-button" am-mode="white disabled 43px">白色按钮不可用43px</button>
+<button type="button" disabled="disabled" class="am-button" am-mode="blue blue-disabled">特殊不可用蓝色按钮</button>
+<button type="button" disabled="disabled" class="am-button" am-mode="red red-disabled">特殊不可用红色按钮 </button>
+</div></div>
+
+<pre><code class="lang-html">&lt;button <span class="hljs-variable">type=</span><span class="hljs-string">"button"</span> <span class="hljs-variable">disabled=</span><span class="hljs-string">"disabled"</span> <span class="hljs-variable">class=</span><span class="hljs-string">"am-button"</span> <span class="hljs-variable">am-mode=</span><span class="hljs-string">"white disabled 43px"</span>&gt;白色按钮不可用<span class="hljs-number">43</span>px&lt;/button&gt;
+&lt;button <span class="hljs-variable">type=</span><span class="hljs-string">"button"</span> <span class="hljs-variable">disabled=</span><span class="hljs-string">"disabled"</span> <span class="hljs-variable">class=</span><span class="hljs-string">"am-button"</span> <span class="hljs-variable">am-mode=</span><span class="hljs-string">"blue blue-disabled"</span>&gt;特殊不可用蓝色按钮&lt;/button&gt;
+&lt;button <span class="hljs-variable">type=</span><span class="hljs-string">"button"</span> <span class="hljs-variable">disabled=</span><span class="hljs-string">"disabled"</span> <span class="hljs-variable">class=</span><span class="hljs-string">"am-button"</span> <span class="hljs-variable">am-mode=</span><span class="hljs-string">"red red-disabled"</span>&gt;特殊不可用红色按钮 &lt;/button&gt;
+</code></pre>
+<h4 id="flat-">flat <code>通栏按钮</code></h4>
+<div class="dpl-demo-wrap dpl-demo-button"><div class="dpl-demo">
+<button type="button" class="am-button" am-mode="flat warn 43px">警示按钮</button>
+<button type="button" disabled="disabled" class="am-button" am-mode="flat warn 43px">警示按钮不可点43px</button>
+</div></div>
+
+<pre><code class="lang-html">&lt;button <span class="hljs-class"><span class="hljs-keyword">type</span>=</span><span class="hljs-string">"button"</span> <span class="hljs-class"><span class="hljs-keyword">class</span>=</span><span class="hljs-string">"am-button"</span> am-mode=<span class="hljs-string">"flat warn 43px"</span>&gt;警示按钮&lt;/button&gt;
+&lt;button <span class="hljs-class"><span class="hljs-keyword">type</span>=</span><span class="hljs-string">"button"</span> disabled=<span class="hljs-string">"disabled"</span> <span class="hljs-class"><span class="hljs-keyword">class</span>=</span><span class="hljs-string">"am-button"</span> am-mode=<span class="hljs-string">"flat warn 43px"</span>&gt;警示按钮不可点<span class="hljs-number">43</span>px&lt;/button&gt;
+</code></pre>
+<h4 id="light-">light <code>简易按钮风格</code></h4>
+<ul>
+<li><strong>可选类型(3种)：</strong></li>
+<li><strong>blue</strong>(推荐使用)</li>
+<li><strong>disabled</strong>(不推荐，少数场景使用)</li>
+</ul>
+<div class="dpl-demo-wrap dpl-demo-button"><div class="dpl-demo">
+<button type="button" class="am-button" am-mode="blue light small">蓝色简易按钮</button>
+<button type="button" class="am-button" am-mode="light small disabled">不可用简易按钮</button>
+</div></div>
+
+<pre><code class="lang-html">&lt;button <span class="hljs-class"><span class="hljs-keyword">type</span>=</span><span class="hljs-string">"button"</span> <span class="hljs-class"><span class="hljs-keyword">class</span>=</span><span class="hljs-string">"am-button"</span> am-mode=<span class="hljs-string">"blue light small"</span>&gt;蓝色简易按钮&lt;/button&gt;
+&lt;button <span class="hljs-class"><span class="hljs-keyword">type</span>=</span><span class="hljs-string">"button"</span> <span class="hljs-class"><span class="hljs-keyword">class</span>=</span><span class="hljs-string">"am-button"</span> am-mode=<span class="hljs-string">"light small disabled"</span>&gt;不可用简易按钮&lt;/button&gt;
+</code></pre>
+<h4 id="layout-">layout <code>布局</code></h4>
+<ul>
+<li><span class="widget-refer"><strong>可选依赖：util/flexbox（布局，amui包已集成）</strong></span></li>
+</ul>
+<div class="dpl-demo-wrap dpl-demo-button"><div class="dpl-demo">
+<div class="am-flexbox" am-mode="average">
+    <div class="am-flexbox-item">
+        <button type="button" class="am-button" am-mode="blue">均长按钮</button>
+    </div>
+    <div class="am-flexbox-item">
+        <button type="button" class="am-button" am-mode="white">长短按钮均长</button>
+    </div>
+</div>
+<a href="button" class="am-button" am-mode="white inline">行内按钮</a>
+<a href="button" class="am-button" am-mode="tiny light inline">最小号按钮</a>
+</div></div>
+
+<pre><code class="lang-html">&lt;div <span class="hljs-class"><span class="hljs-keyword">class</span>=</span><span class="hljs-string">"am-flexbox"</span> am-mode=<span class="hljs-string">"average"</span>&gt;
+    &lt;div <span class="hljs-class"><span class="hljs-keyword">class</span>=</span><span class="hljs-string">"am-flexbox-item"</span>&gt;
+        &lt;button <span class="hljs-class"><span class="hljs-keyword">type</span>=</span><span class="hljs-string">"button"</span> <span class="hljs-class"><span class="hljs-keyword">class</span>=</span><span class="hljs-string">"am-button"</span> am-mode=<span class="hljs-string">"blue"</span>&gt;均长按钮&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div <span class="hljs-class"><span class="hljs-keyword">class</span>=</span><span class="hljs-string">"am-flexbox-item"</span>&gt;
+        &lt;button <span class="hljs-class"><span class="hljs-keyword">type</span>=</span><span class="hljs-string">"button"</span> <span class="hljs-class"><span class="hljs-keyword">class</span>=</span><span class="hljs-string">"am-button"</span> am-mode=<span class="hljs-string">"white"</span>&gt;长短按钮均长&lt;/button&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;a href=<span class="hljs-string">"button"</span> <span class="hljs-class"><span class="hljs-keyword">class</span>=</span><span class="hljs-string">"am-button"</span> am-mode=<span class="hljs-string">"white inline"</span>&gt;行内按钮&lt;/a&gt;
+&lt;a href=<span class="hljs-string">"button"</span> <span class="hljs-class"><span class="hljs-keyword">class</span>=</span><span class="hljs-string">"am-button"</span> am-mode=<span class="hljs-string">"tiny light inline"</span>&gt;最小号按钮&lt;/a&gt;
+</code></pre>

@@ -1,0 +1,91 @@
+<h3 id="smooth-">Smooth <code>默认全局属性</code></h3>
+<h4 id="usage-">usage <code>使用方法</code></h4>
+<ul>
+<li><span class="widget-build build-yes"><strong>AntUI默认已集成</strong></span></li>
+<li><span class="widget-mod"><strong>模块名：base/smooth</strong></span></li>
+</ul>
+<p><a href="../8.7/nav.html#use" title="使用方式">使用方式</a></p>
+<h4 id="position-">position <code>作用定位</code></h4>
+<p>一个简单的钱包个性样式小文件，主要写一些简易的全局属性，仅此而已。</p>
+<p>取名smooth，是希望它能成为全局属性和组件属性的一个简单的润滑衔接点。</p>
+<h4 id="source-css-">source <code>css代码</code></h4>
+<pre><code class="lang-css"><span class="hljs-tag">html</span>,
+<span class="hljs-tag">body</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">min-height</span>:<span class="hljs-value"><span class="hljs-number">100%</span></span></span>;
+}</span>
+<span class="hljs-tag">body</span><span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">-webkit-user-select</span>:<span class="hljs-value">none</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">user-select</span>:<span class="hljs-value">none</span></span>;
+}</span>
+<span class="hljs-tag">a</span>,
+<span class="hljs-tag">img</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">-webkit-touch-callout</span>:<span class="hljs-value">none</span></span>;
+}</span>
+<span class="hljs-tag">body</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">background-color</span>:<span class="hljs-value"><span class="hljs-hexcolor">#f5f5f9</span></span></span>;
+}</span>
+<span class="hljs-tag">body</span><span class="hljs-class">.am-bg-white</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">background-color</span>:<span class="hljs-value"><span class="hljs-hexcolor">#fff</span></span></span>;
+}</span>
+<span class="hljs-tag">body</span>, <span class="hljs-tag">input</span>, <span class="hljs-tag">textarea</span>, <span class="hljs-tag">select</span>, <span class="hljs-tag">button</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">font-size</span>:<span class="hljs-value"><span class="hljs-number">16px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">line-height</span>:<span class="hljs-value"><span class="hljs-number">1.5</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">color</span>:<span class="hljs-value"><span class="hljs-hexcolor">#333</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">font-family</span>:<span class="hljs-value"> <span class="hljs-string">"Helvetica Neue"</span>, Helvetica, STHeiTi, sans-serif</span></span>;
+}</span>
+<span class="hljs-tag">input</span><span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">line-height</span>:<span class="hljs-value">normal</span></span>;
+}</span>
+<span class="hljs-tag">a</span><span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">color</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#0af</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">text-decoration</span>:<span class="hljs-value">none</span></span>;
+}</span>
+
+
+<span class="hljs-rule"><span class="hljs-attribute">.fn-clear</span>:<span class="hljs-value">after{
+    content:<span class="hljs-string">"\0200"</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">visibility</span>:<span class="hljs-value">hidden</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">display</span>:<span class="hljs-value">block</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">font-size</span>:<span class="hljs-value"><span class="hljs-number">0</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">clear</span>:<span class="hljs-value">both</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">height</span>:<span class="hljs-value"><span class="hljs-number">0</span></span></span>;
+}
+
+<span class="hljs-class">.fn-hide</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">display</span>:<span class="hljs-value">none</span></span>;
+}</span>
+<span class="hljs-class">.fn-left</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">float</span>:<span class="hljs-value">left</span></span>;
+}</span>
+<span class="hljs-class">.fn-right</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">float</span>:<span class="hljs-value">right</span></span>;
+}</span>
+
+<span class="hljs-class">.am-content</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">margin-left</span>:<span class="hljs-value"> <span class="hljs-number">10px</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">margin-right</span>:<span class="hljs-value"> <span class="hljs-number">10px</span></span></span>;
+}</span>
+<span class="hljs-class">.am-content</span> <span class="hljs-tag">h5</span><span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">margin</span>:<span class="hljs-value"><span class="hljs-number">0</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">padding</span>:<span class="hljs-value"><span class="hljs-number">0</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">font-weight</span>:<span class="hljs-value">normal</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">line-height</span>:<span class="hljs-value"><span class="hljs-number">1.5</span></span></span>;
+}</span>
+<span class="hljs-class">.am-fixed</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">position</span>:<span class="hljs-value">fixed<span class="hljs-important">!important</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">top</span>:<span class="hljs-value"><span class="hljs-number">0</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">left</span>:<span class="hljs-value"><span class="hljs-number">0</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">right</span>:<span class="hljs-value"><span class="hljs-number">0</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">z-index</span>:<span class="hljs-value"> <span class="hljs-number">99</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"> <span class="hljs-number">100%</span></span></span>;
+}</span>
+
+<span class="hljs-class">.am-fixed-bottom</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">top</span>:<span class="hljs-value"> inherit</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">bottom</span>:<span class="hljs-value"><span class="hljs-number">0</span></span></span>;
+}</span>
+<span class="hljs-class">.user-select</span><span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">-webkit-user-select</span>:<span class="hljs-value">auto</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">user-select</span>:<span class="hljs-value">auto</span></span>;
+}</span>
+</code></pre>

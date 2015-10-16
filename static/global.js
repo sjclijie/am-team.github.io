@@ -5,10 +5,10 @@ define(function(require, exports, module) {
             if($(this).attr('href').indexOf("#") !== 0){
                 $(this).attr('target','_blank');
             }
-        })
+        });
         //加入复制到剪贴版按钮
         $(".highlight").append("<span class='clipbord'>复制到剪贴版</span>");
-        //锚点链接自动定位  
+        //锚点链接自动定位
         if(window.location.hash.length > 0){
             //如果高于1.9则不支持jQuery.browser
             var hash = jQuery.browser.safari ? decodeURI(window.location.hash) : window.location.hash;
@@ -42,14 +42,15 @@ define(function(require, exports, module) {
     });
 
     $(".goTop").click(function () {                     //滚动到顶
-        $("body").animate({scrollTop: '0'}, 400);
+        $("html, body").animate({scrollTop: '0'}, 400);
     });
     $(".threecol.meta").on("click", "a", function (event) {       //动画滚动到指定锚点
-        history.pushState && event.preventDefault();    //不支持historyAPI则退化为默认方法
-        var t = $(this), url;
-        $("html, body").animate({scrollTop: $(t.attr("href")).offset().top - 57}, 800);
+        event.preventDefault();    //不支持historyAPI则退化为默认方法
+        var t = $(this), url, idx;
+        idx = $("[href=" + t.attr('href') + "]").index(t);
+        $("html, body").animate({scrollTop: $(t.attr("href")).eq(idx).offset().top - 57}, 800);
         url = window.location.pathname.split("/");
-        history.pushState({}, "", url[url.length - 1] + t.attr("href"));
+        history.pushState && history.pushState({}, "", url[url.length - 1] + t.attr("href"));
     });
     $(".navbar-toggle").click(function () {             //小屏下切换菜单
         $(".header-nav").slideToggle(800);
@@ -63,11 +64,11 @@ define(function(require, exports, module) {
     });
     $(".highlight pre").mousedown(function () {             //鼠标选择文本
         $(this).siblings(".clipbord").addClass("hide");
-    })
+    });
     $(document).mouseup(function () {
-        if ($.trim(document.getSelection().toString()) == "") {
+        if (document.getSelection && $.trim(document.getSelection().toString()) === "") {
             $(".clipbord").removeClass("hide");
-        };
+        }
     });
 
     function _sidebarInit () {          //初始化边栏
@@ -132,12 +133,12 @@ define(function(require, exports, module) {
             $(".goTop").fadeOut(200);
         }
     }
-    
+
     function _titleActive() {       //边栏标题跟随
         var titleNodes=$('.document .entry-content').find('h2,h3');
         var sidebar=$('.threecol.meta');
         titleNodes.each(function(index){
-            if(this.getBoundingClientRect().bottom > 17 && this.getBoundingClientRect().top < window.innerHeight){
+            if(this.getBoundingClientRect().bottom > 17 && this.getBoundingClientRect().top < document.documentElement.clientHeight){
                 var curNode=sidebar.find('[data-index="'+index+'"]');
                 curNode.closest('dl').siblings('dl').removeClass('active');
                 curNode.closest('dl').addClass('active');

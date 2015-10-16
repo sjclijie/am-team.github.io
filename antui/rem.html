@@ -1,0 +1,205 @@
+<h3 id="rem-antui-1px-">rem版AntUI引入 <code>1px问题解决</code></h3>
+<h4 id="rem-antui-ios-android4-4-">rem版AntUI能够解决的问题（iOS及Android4.4以上）</h4>
+<ul>
+<li><strong>1px问题</strong><ul>
+<li>即H5页面中1px宽的线渲染时在部分高分辨率手机中会占用2px或更高的物理像素。对比native界面显得不精致。</li>
+</ul>
+</li>
+<li><p><strong>Android钱包UI适配问题(在三星S5 Android5机器上有兼容性问题，且视觉不认可，废弃)</strong></p>
+<ul>
+<li>rem化后，html的font-size大小会根据具体机型的实际宽度与基准宽度（640px）的比例进行缩放。结果是与native的处理保持一致（iOS的native实现没有同比例放大，即高度保持不变，但是宽度会自适应）。</li>
+</ul>
+<pre><code class="lang-javascript">    //默认情况下html的font-size为<span class="hljs-number">16</span>px。
+    //详细代码请参考下方的行内脚本
+    win.<span class="hljs-comment">rem = 16 * dpr;</span>
+</code></pre>
+</li>
+</ul>
+<h4 id="-rem-antui-">试用rem版AntUI的步骤</h4>
+<ul>
+<li><p><strong>引用对应的rem版AntUI样式文件</strong></p>
+<ul>
+<li>例如，原先引用文件的是<code>&lt;link href=&quot;https://a.alipayobjects.com/amui/dpl/9.0.0.2/amui.css&quot; rel=&quot;stylesheet&quot;/&gt;</code></li>
+<li>则替换为<code>&lt;link href=&quot;https://a.alipayobjects.com/amui/rem/dpl/9.0.0.2/amui.css&quot; rel=&quot;stylesheet&quot;/&gt;</code>。</li>
+<li>总体替换规则是 <strong>/amui/dpl</strong> ==》<strong>/amui/rem/dpl</strong>,9.0.0.1版本以上开始支持</li>
+</ul>
+</li>
+<li><p><strong>更换viewport的设置方式</strong></p>
+<ul>
+<li><p>原先写死的<code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0&quot;/&gt;</code>，请先删除或者注释</p>
+</li>
+<li><p>在header中加入行内脚本，通过脚本来生成viewport的meta信息。脚本的大体思路是先获取当前H5页面的dpr，如果是Android4.4以上机型或者是iOS，则根据dpr的值换算出页面的scale。以iPhone5为例，物理分辨率为640px，scale=1时，H5页面渲染的width则为320px，而当sacle设置为1/dpr=0.5时，H5页面渲染的width则为640px。那么在css中1px就和物理的1px对应上。</p>
+</li>
+</ul>
+<pre><code class="lang-javascript">;(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">win</span>) </span>{
+    <span class="hljs-keyword">var</span> docEl = <span class="hljs-built_in">document</span>.documentElement;
+    <span class="hljs-keyword">var</span> metaEl = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'meta[name="viewport"]'</span>);
+    <span class="hljs-keyword">var</span> fontEl = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">'style'</span>), dpr,scale,tid;
+    <span class="hljs-keyword">if</span> (metaEl) {
+        <span class="hljs-keyword">var</span> match = metaEl.getAttribute(<span class="hljs-string">'content'</span>).match(<span class="hljs-regexp">/initial\-scale=(["']?)([\d\.]+)\1?/</span>);
+        <span class="hljs-keyword">if</span> (match) {
+            scale = <span class="hljs-built_in">parseFloat</span>(match[<span class="hljs-number">2</span>]);
+            dpr = <span class="hljs-number">1</span> / scale;
+        }
+    }
+    <span class="hljs-keyword">if</span> (!dpr &amp;&amp; !scale) {
+        dpr = win.devicePixelRatio || <span class="hljs-number">1</span>;
+        scale = <span class="hljs-number">1</span> / dpr;
+    }
+    docEl.setAttribute(<span class="hljs-string">'data-dpr'</span>, dpr);
+    docEl.firstElementChild.appendChild(fontEl);
+    <span class="hljs-keyword">if</span> (!metaEl) {
+        metaEl = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">'meta'</span>);
+        metaEl.setAttribute(<span class="hljs-string">'name'</span>, <span class="hljs-string">'viewport'</span>);
+        <span class="hljs-keyword">var</span> matches = navigator.userAgent.match(<span class="hljs-regexp">/Android[\S\s]+AppleWebkit\/(\d{3})/i</span>);
+        <span class="hljs-keyword">var</span> UCversion = navigator.userAgent.match(<span class="hljs-regexp">/U3\/((\d+|\.){5,})/i</span>);
+
+        <span class="hljs-keyword">if</span>(!matches || matches &amp;&amp; matches[<span class="hljs-number">1</span>] &gt; <span class="hljs-number">534</span> || UCversion &amp;&amp; <span class="hljs-built_in">parseInt</span>(UCversion[<span class="hljs-number">1</span>].split(<span class="hljs-string">'.'</span>).join(<span class="hljs-string">''</span>),<span class="hljs-number">10</span>) &gt;= <span class="hljs-number">80</span>) {
+            metaEl.setAttribute(<span class="hljs-string">'content'</span>, <span class="hljs-string">'width=device-width,user-scalable=no,initial-scale='</span> + scale + <span class="hljs-string">',maximum-scale='</span> + scale + <span class="hljs-string">', minimum-scale='</span> + scale);
+            <span class="hljs-keyword">if</span> (docEl.firstElementChild) {
+                docEl.firstElementChild.appendChild(metaEl);
+            } <span class="hljs-keyword">else</span> {
+                <span class="hljs-keyword">var</span> wrap = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">'div'</span>);
+                wrap.appendChild(metaEl);
+                <span class="hljs-built_in">document</span>.write(wrap.innerHTML);
+            }
+            <span class="hljs-keyword">if</span>(docEl.clientWidth == <span class="hljs-number">980</span> || docEl.clientWidth == <span class="hljs-number">1024</span>) {
+                metaEl.setAttribute(<span class="hljs-string">'content'</span>, <span class="hljs-string">'target-densitydpi=device-dpi,width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1'</span>);
+            }
+        } <span class="hljs-keyword">else</span> {
+            metaEl.setAttribute(<span class="hljs-string">'content'</span>, <span class="hljs-string">'width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1'</span>);
+            <span class="hljs-keyword">if</span> (docEl.firstElementChild) {
+                docEl.firstElementChild.appendChild(metaEl);
+            } <span class="hljs-keyword">else</span> {
+                <span class="hljs-keyword">var</span> wrap2 = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">'div'</span>);
+                wrap2.appendChild(metaEl);
+                <span class="hljs-built_in">document</span>.write(wrap2.innerHTML);
+            }
+
+            dpr = <span class="hljs-number">1</span>;
+        }
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setUnitA</span>(<span class="hljs-params"></span>)</span>{
+        win.rem = <span class="hljs-number">16</span> * dpr;
+        fontEl.innerHTML = <span class="hljs-string">'html{font-size:'</span> + win.rem + <span class="hljs-string">'px!important;}'</span>;
+    }
+    win.dpr = dpr;
+    win.addEventListener(<span class="hljs-string">'resize'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+        clearTimeout(tid);
+        tid = setTimeout(setUnitA, <span class="hljs-number">300</span>);
+    }, <span class="hljs-literal">false</span>);
+    win.addEventListener(<span class="hljs-string">'pageshow'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>) </span>{
+        <span class="hljs-keyword">if</span> (e.persisted) {
+            clearTimeout(tid);
+            tid = setTimeout(setUnitA, <span class="hljs-number">300</span>);
+        }
+    }, <span class="hljs-literal">false</span>);
+    setUnitA();
+})(<span class="hljs-built_in">window</span>);
+</code></pre>
+</li>
+<li><p><strong>页面的样式单位改为rem，换算比例为16px=1rem</strong></p>
+<p>如果值是1px，则继续保留<br>也可以参考@汗僧 写的gulp中使用的正则替换语句</p>
+<pre><code class="lang-javascript">.pipe(<span class="hljs-built_in">replace</span>(/['"](\d+)px['"]|\b(\d+)px\b/g, function(pixel) {
+    <span class="hljs-flow">if</span> ( /'|"/.test(pixel) || '<span class="hljs-number">1</span>px' == pixel || '<span class="hljs-number">0</span>px' == pixel) {
+        return pixel;
+    }
+    return ( parseInt(pixel) * <span class="hljs-number">1</span> / <span class="hljs-number">16</span> ) + '<span class="hljs-comment">rem';</span>
+}))
+</code></pre>
+</li>
+</ul>
+<h4 id="html-templet-html-">html-templet <code>推荐HTML</code></h4>
+<pre><code class="lang-html"><span class="hljs-doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">meta</span> <span class="hljs-attribute">charset</span>=<span class="hljs-value">"utf-8"</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">title</span>&gt;</span>省市区选择<span class="hljs-tag">&lt;/<span class="hljs-title">title</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">meta</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"apple-mobile-web-app-capable"</span> <span class="hljs-attribute">content</span>=<span class="hljs-value">"yes"</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">meta</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"apple-mobile-web-app-status-bar-style"</span> <span class="hljs-attribute">content</span>=<span class="hljs-value">"black"</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">meta</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"format-detection"</span> <span class="hljs-attribute">content</span>=<span class="hljs-value">"telephone=no"</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">meta</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"format-detection"</span> <span class="hljs-attribute">content</span>=<span class="hljs-value">"email=no"</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="javascript">
+        ;(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">win</span>) </span>{
+            <span class="hljs-keyword">var</span> docEl = <span class="hljs-built_in">document</span>.documentElement;
+            <span class="hljs-keyword">var</span> metaEl = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'meta[name="viewport"]'</span>);
+            <span class="hljs-keyword">var</span> fontEl = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">'style'</span>), dpr,scale,tid;
+            <span class="hljs-keyword">if</span> (metaEl) {
+                <span class="hljs-keyword">var</span> match = metaEl.getAttribute(<span class="hljs-string">'content'</span>).match(<span class="hljs-regexp">/initial\-scale=(["']?)([\d\.]+)\1?/</span>);
+                <span class="hljs-keyword">if</span> (match) {
+                    scale = <span class="hljs-built_in">parseFloat</span>(match[<span class="hljs-number">2</span>]);
+                    dpr = <span class="hljs-number">1</span> / scale;
+                }
+            }
+            <span class="hljs-keyword">if</span> (!dpr &amp;&amp; !scale) {
+                dpr = win.devicePixelRatio || <span class="hljs-number">1</span>;
+                scale = <span class="hljs-number">1</span> / dpr;
+            }
+            docEl.setAttribute(<span class="hljs-string">'data-dpr'</span>, dpr);
+            docEl.firstElementChild.appendChild(fontEl);
+            <span class="hljs-keyword">if</span> (!metaEl) {
+                metaEl = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">'meta'</span>);
+                metaEl.setAttribute(<span class="hljs-string">'name'</span>, <span class="hljs-string">'viewport'</span>);
+                <span class="hljs-keyword">var</span> matches = navigator.userAgent.match(<span class="hljs-regexp">/Android[\S\s]+AppleWebkit\/(\d{3})/i</span>);
+                <span class="hljs-keyword">var</span> UCversion = navigator.userAgent.match(<span class="hljs-regexp">/U3\/((\d+|\.){5,})/i</span>);
+
+                <span class="hljs-keyword">if</span>(!matches || matches &amp;&amp; matches[<span class="hljs-number">1</span>] &gt; <span class="hljs-number">534</span> || UCversion &amp;&amp; <span class="hljs-built_in">parseInt</span>(UCversion[<span class="hljs-number">1</span>].split(<span class="hljs-string">'.'</span>).join(<span class="hljs-string">''</span>),<span class="hljs-number">10</span>) &gt;= <span class="hljs-number">80</span>) {
+                    metaEl.setAttribute(<span class="hljs-string">'content'</span>, <span class="hljs-string">'width=device-width,user-scalable=no,initial-scale='</span> + scale + <span class="hljs-string">',maximum-scale='</span> + scale + <span class="hljs-string">', minimum-scale='</span> + scale);
+                    <span class="hljs-keyword">if</span> (docEl.firstElementChild) {
+                        docEl.firstElementChild.appendChild(metaEl);
+                    } <span class="hljs-keyword">else</span> {
+                        <span class="hljs-keyword">var</span> wrap = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">'div'</span>);
+                        wrap.appendChild(metaEl);
+                        <span class="hljs-built_in">document</span>.write(wrap.innerHTML);
+                    }
+                    <span class="hljs-keyword">if</span>(docEl.clientWidth == <span class="hljs-number">980</span> || docEl.clientWidth == <span class="hljs-number">1024</span>) {
+                        metaEl.setAttribute(<span class="hljs-string">'content'</span>, <span class="hljs-string">'target-densitydpi=device-dpi,width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1'</span>);
+                    }
+                } <span class="hljs-keyword">else</span> {
+                    metaEl.setAttribute(<span class="hljs-string">'content'</span>, <span class="hljs-string">'width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1'</span>);
+                    <span class="hljs-keyword">if</span> (docEl.firstElementChild) {
+                        docEl.firstElementChild.appendChild(metaEl);
+                    } <span class="hljs-keyword">else</span> {
+                        <span class="hljs-keyword">var</span> wrap2 = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">'div'</span>);
+                        wrap2.appendChild(metaEl);
+                        <span class="hljs-built_in">document</span>.write(wrap2.innerHTML);
+                    }
+
+                    dpr = <span class="hljs-number">1</span>;
+                }
+            }
+
+            <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setUnitA</span>(<span class="hljs-params"></span>)</span>{
+                win.rem = <span class="hljs-number">16</span> * dpr;
+                fontEl.innerHTML = <span class="hljs-string">'html{font-size:'</span> + win.rem + <span class="hljs-string">'px!important;}'</span>;
+            }
+            win.dpr = dpr;
+            win.addEventListener(<span class="hljs-string">'resize'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+                clearTimeout(tid);
+                tid = setTimeout(setUnitA, <span class="hljs-number">300</span>);
+            }, <span class="hljs-literal">false</span>);
+            win.addEventListener(<span class="hljs-string">'pageshow'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>) </span>{
+                <span class="hljs-keyword">if</span> (e.persisted) {
+                    clearTimeout(tid);
+                    tid = setTimeout(setUnitA, <span class="hljs-number">300</span>);
+                }
+            }, <span class="hljs-literal">false</span>);
+            setUnitA();
+        })(<span class="hljs-built_in">window</span>);
+    </span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"https://a.alipayobjects.com/amui/zepto/1.1.3/zepto.js"</span> <span class="hljs-attribute">charset</span>=<span class="hljs-value">"utf-8"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"https://a.alipayobjects.com/publichome-static/antBridge/antBridge.min.js?1234"</span> <span class="hljs-attribute">charset</span>=<span class="hljs-value">"utf-8"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">link</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"https://a.alipayobjects.com/amui/rem/dpl/9.0.0.2/amui.css"</span> <span class="hljs-attribute">rel</span>=<span class="hljs-value">"stylesheet"</span> <span class="hljs-attribute">charset</span>=<span class="hljs-value">"utf-8"</span>/&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">body</span> <span class="hljs-attribute">ontouchstart</span>=<span class="hljs-value">""</span>&gt;</span>
+
+<span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">html</span>&gt;</span>
+</code></pre>
+<h4 id="-">相关参考</h4>
+<ul>
+<li><a href="http://www.atatech.org/articles/26335">mobile web retina下1px解决方案升级版</a></li>
+<li><a href="http://www.atatech.org/articles/26549?rnd=361941981&amp;rnd=1826349491">手机淘宝的flexible设计与实现</a></li>
+<li><a href="http://www.atatech.org/articles/28539">viewport meta标签深度解析</a></li>
+</ul>

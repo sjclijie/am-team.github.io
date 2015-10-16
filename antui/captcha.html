@@ -1,0 +1,231 @@
+<h3 id="captcha-">Captcha <code>校验码</code></h3>
+<h4 id="preview-">preview <code>效果预览</code></h4>
+<ul>
+<li><strong>和Form（表单输入）是同一组件</strong></li>
+</ul>
+<div class="dpl-demo-wrap dpl-demo-captcha"><div class="dpl-demo">
+<div class="am-list" am-mode="flat chip form">
+    <div class="am-list-item am-input-autoclear">
+        <div class="am-list-label">校验码</div>
+        <div class="am-list-control">
+            <input type="text" placeholder="输入短信校验码" value="">
+        </div>
+        <div class="am-list-clear"><i class="am-icon-clear am-icon" am-mode="clear"></i></div>
+        <div class="am-list-button">
+            <button type="button">发送校验码</button>
+        </div>
+    </div>
+</div>
+<div class="am-list" am-mode="flat chip form">
+    <div class="am-list-item am-input-autoclear">
+        <div class="am-list-label">校验码</div>
+        <div class="am-list-control">
+            <input type="text" placeholder="输入短信校验码" value="">
+        </div>
+        <div class="am-list-clear"><i class="am-icon-clear am-icon" am-mode="clear"></i></div>
+        <div class="am-list-button">
+            <button type="button" disabled="disabled">58秒后重发</button>
+        </div>
+    </div>
+</div>
+<div class="am-list" am-mode="flat chip form">
+    <div class="am-list-item am-input-autoclear">
+        <div class="am-list-label">校验码</div>
+        <div class="am-list-control">
+            <input type="text" placeholder="输入短信校验码" value="">
+        </div>
+        <div class="am-list-clear"><i class="am-icon-clear am-icon" am-mode="clear"></i></div>
+        <div class="am-list-button">
+            <button type="button">重发校验码</button>
+        </div>
+    </div>
+</div>
+<div class="am-list" am-mode="flat chip form">
+    <div class="am-list-item am-input-autoclear">
+        <div class="am-list-label">校验码</div>
+        <div class="am-list-control">
+            <input type="text" placeholder="输入右侧校验码" value="">
+        </div>
+        <div class="am-list-clear"><i class="am-icon-clear am-icon" am-mode="clear"></i></div>
+        <div class="am-list-button">
+            <div class="am-captcha-figure"><img src="https://i.alipayobjects.com/i/ecmng/png/201501/49lsAmBWzl.png"/></div>
+            <a href="#" class="am-captcha-refresh am-icon" am-mode="captcha-refresh"></a>
+        </div>
+    </div>
+</div>
+<div class="am-list" am-mode="flat chip form 43px">
+  <div class="am-list-item am-input-autoclear">
+      <div class="am-list-label">校验码</div>
+      <div class="am-list-control">
+          <input type="text" placeholder="输入右侧校验码" value="">
+      </div>
+      <div class="am-list-clear"><i class="am-icon-clear am-icon" am-mode="clear"></i></div>
+      <div class="am-list-button">
+          <div class="am-captcha-figure"><button type="button" disabled="disabled">加载中</button></div>
+          <a href="#" class="am-captcha-refresh am-icon" am-mode="captcha-refresh"></a>
+      </div>
+  </div>
+</div>
+</div></div>
+
+
+
+<h4 id="usage-">usage <code>使用说明</code></h4>
+<ul>
+<li><span class="widget-build build-yes"><strong>AntUI默认已集成</strong></span></li>
+<li><span class="widget-mod"><strong>模块名：widget/form</strong></span></li>
+<li><p><span class="widget-refer"><strong>必选依赖：</strong></span></p>
+<ul>
+<li><strong> widget/list（列表，amui包已集成）</strong></li>
+<li><strong> icon/clear（清除icon，amui包已集成）</strong></li>
+<li><strong> amui.js（输入清除逻辑控制，需单独引入）</strong></li>
+</ul>
+</li>
+<li><p><span class="widget-refer"><strong>可选依赖：</strong></span></p>
+<ul>
+<li><strong> icon/form（表单icon，amui包未集成）</strong></li>
+<li><strong> icon/captcha（校验码刷新icon，amui包未集成）</strong></li>
+</ul>
+</li>
+</ul>
+<p><a href="../8.7/nav.html#use" title="使用方式">使用方式</a></p>
+<ul>
+<li>使用方式</li>
+</ul>
+<h4 id="default-">default <code>基础样式</code></h4>
+<div class="dpl-demo-wrap dpl-demo-captcha"><div class="dpl-demo">
+<div class="am-list" am-mode="flat chip form">
+    <div class="am-list-item am-input-autoclear">
+        <div class="am-list-label">校验码</div>
+        <div class="am-list-control">
+            <input type="text" placeholder="输入短信校验码" value="">
+        </div>
+        <div class="am-list-clear"><i class="am-icon-clear am-icon" am-mode="clear"></i></div>
+        <div class="am-list-button">
+            <button type="button">发送校验码</button>
+        </div>
+    </div>
+</div>
+<div class="am-list" am-mode="flat chip form">
+    <div class="am-list-item am-input-autoclear">
+        <div class="am-list-label">校验码</div>
+        <div class="am-list-control">
+            <input type="text" placeholder="输入短信校验码" value="">
+        </div>
+        <div class="am-list-clear"><i class="am-icon-clear am-icon" am-mode="clear"></i></div>
+        <div class="am-list-button">
+            <button type="button" disabled="disabled">58秒后重发</button>
+        </div>
+    </div>
+</div>
+</div></div>
+
+<pre><code class="lang-html">&lt;<span class="hljs-keyword">div</span> <span class="hljs-type">class</span>=<span class="hljs-string">"am-list"</span> am-mode=<span class="hljs-string">"flat chip form"</span>&gt;
+    &lt;<span class="hljs-keyword">div</span> <span class="hljs-type">class</span>=<span class="hljs-string">"am-list-item am-input-autoclear"</span>&gt;
+        &lt;<span class="hljs-keyword">div</span> <span class="hljs-type">class</span>=<span class="hljs-string">"am-list-label"</span>&gt;校验码&lt;/<span class="hljs-keyword">div</span>&gt;
+        &lt;<span class="hljs-keyword">div</span> <span class="hljs-type">class</span>=<span class="hljs-string">"am-list-control"</span>&gt;
+            &lt;input type=<span class="hljs-string">"text"</span> placeholder=<span class="hljs-string">"输入短信校验码"</span> value=<span class="hljs-string">""</span>&gt;
+        &lt;/<span class="hljs-keyword">div</span>&gt;
+        &lt;<span class="hljs-keyword">div</span> <span class="hljs-type">class</span>=<span class="hljs-string">"am-list-clear"</span>&gt;&lt;i <span class="hljs-type">class</span>=<span class="hljs-string">"am-icon-clear am-icon"</span> am-mode=<span class="hljs-string">"clear"</span>&gt;&lt;/i&gt;&lt;/<span class="hljs-keyword">div</span>&gt;
+        &lt;<span class="hljs-keyword">div</span> <span class="hljs-type">class</span>=<span class="hljs-string">"am-list-button"</span>&gt;
+            &lt;button type=<span class="hljs-string">"button"</span>&gt;发送校验码&lt;/button&gt;
+        &lt;/<span class="hljs-keyword">div</span>&gt;
+    &lt;/<span class="hljs-keyword">div</span>&gt;
+&lt;/<span class="hljs-keyword">div</span>&gt;
+&lt;<span class="hljs-keyword">div</span> <span class="hljs-type">class</span>=<span class="hljs-string">"am-list"</span> am-mode=<span class="hljs-string">"flat chip form"</span>&gt;
+    &lt;<span class="hljs-keyword">div</span> <span class="hljs-type">class</span>=<span class="hljs-string">"am-list-item am-input-autoclear"</span>&gt;
+        &lt;<span class="hljs-keyword">div</span> <span class="hljs-type">class</span>=<span class="hljs-string">"am-list-label"</span>&gt;校验码&lt;/<span class="hljs-keyword">div</span>&gt;
+        &lt;<span class="hljs-keyword">div</span> <span class="hljs-type">class</span>=<span class="hljs-string">"am-list-control"</span>&gt;
+            &lt;input type=<span class="hljs-string">"text"</span> placeholder=<span class="hljs-string">"输入短信校验码"</span> value=<span class="hljs-string">""</span>&gt;
+        &lt;/<span class="hljs-keyword">div</span>&gt;
+        &lt;<span class="hljs-keyword">div</span> <span class="hljs-type">class</span>=<span class="hljs-string">"am-list-clear"</span>&gt;&lt;i <span class="hljs-type">class</span>=<span class="hljs-string">"am-icon-clear am-icon"</span> am-mode=<span class="hljs-string">"clear"</span>&gt;&lt;/i&gt;&lt;/<span class="hljs-keyword">div</span>&gt;
+        &lt;<span class="hljs-keyword">div</span> <span class="hljs-type">class</span>=<span class="hljs-string">"am-list-button"</span>&gt;
+            &lt;button type=<span class="hljs-string">"button"</span> disabled=<span class="hljs-string">"disabled"</span>&gt;<span class="hljs-number">58</span>秒后重发&lt;/button&gt;
+        &lt;/<span class="hljs-keyword">div</span>&gt;
+    &lt;/<span class="hljs-keyword">div</span>&gt;
+&lt;/<span class="hljs-keyword">div</span>&gt;
+</code></pre>
+<h4 id="refresh-">refresh <code>带刷新校验码</code></h4>
+<ul>
+<li><strong>必选依赖：icon/captcha（校验码刷新icon，amui包未集成）</strong></li>
+</ul>
+<div class="dpl-demo-wrap dpl-demo-captcha"><div class="dpl-demo">
+<div class="am-list" am-mode="flat chip form">
+    <div class="am-list-item am-input-autoclear">
+        <div class="am-list-label">校验码</div>
+        <div class="am-list-control">
+            <input type="text" placeholder="输入短信校验码" value="">
+        </div>
+        <div class="am-list-clear"><i class="am-icon-clear am-icon" am-mode="clear"></i></div>
+        <div class="am-list-button">
+            <button type="button">重发校验码</button>
+        </div>
+    </div>
+</div>
+<div class="am-list" am-mode="flat chip form">
+    <div class="am-list-item am-input-autoclear">
+        <div class="am-list-label">校验码</div>
+        <div class="am-list-control">
+            <input type="text" placeholder="右侧校验码" value="">
+        </div>
+        <div class="am-list-clear"><i class="am-icon-clear am-icon" am-mode="clear"></i></div>
+        <div class="am-list-button">
+            <div class="am-captcha-figure"><img src="https://i.alipayobjects.com/i/ecmng/png/201501/49lsAmBWzl.png"/></div>
+            <a href="#" class="am-captcha-refresh am-icon" am-mode="captcha-refresh"></a>
+        </div>
+    </div>
+</div>
+<div class="am-list" am-mode="flat chip form 43px">
+  <div class="am-list-item am-input-autoclear">
+      <div class="am-list-label">校验码</div>
+      <div class="am-list-control">
+          <input type="text" placeholder="右校验码" value="">
+      </div>
+      <div class="am-list-clear"><i class="am-icon-clear am-icon" am-mode="clear"></i></div>
+      <div class="am-list-button">
+          <div class="am-captcha-figure"><button type="button" disabled="disabled">加载中</button></div>
+          <a href="#" class="am-captcha-refresh am-icon" am-mode="captcha-refresh"></a>
+      </div>
+  </div>
+</div>
+</div></div>
+
+<pre><code class="lang-html">&lt;<span class="hljs-keyword">div</span> <span class="hljs-type">class</span>=<span class="hljs-string">"am-list"</span> am-mode=<span class="hljs-string">"flat chip form"</span>&gt;
+    &lt;<span class="hljs-keyword">div</span> <span class="hljs-type">class</span>=<span class="hljs-string">"am-list-item am-input-autoclear"</span>&gt;
+        &lt;<span class="hljs-keyword">div</span> <span class="hljs-type">class</span>=<span class="hljs-string">"am-list-label"</span>&gt;校验码&lt;/<span class="hljs-keyword">div</span>&gt;
+        &lt;<span class="hljs-keyword">div</span> <span class="hljs-type">class</span>=<span class="hljs-string">"am-list-control"</span>&gt;
+            &lt;input type=<span class="hljs-string">"text"</span> placeholder=<span class="hljs-string">"输入短信校验码"</span> value=<span class="hljs-string">""</span>&gt;
+        &lt;/<span class="hljs-keyword">div</span>&gt;
+        &lt;<span class="hljs-keyword">div</span> <span class="hljs-type">class</span>=<span class="hljs-string">"am-list-clear"</span>&gt;&lt;i <span class="hljs-type">class</span>=<span class="hljs-string">"am-icon-clear am-icon"</span> am-mode=<span class="hljs-string">"clear"</span>&gt;&lt;/i&gt;&lt;/<span class="hljs-keyword">div</span>&gt;
+        &lt;<span class="hljs-keyword">div</span> <span class="hljs-type">class</span>=<span class="hljs-string">"am-list-button"</span>&gt;
+            &lt;button type=<span class="hljs-string">"button"</span>&gt;重发校验码&lt;/button&gt;
+        &lt;/<span class="hljs-keyword">div</span>&gt;
+    &lt;/<span class="hljs-keyword">div</span>&gt;
+&lt;/<span class="hljs-keyword">div</span>&gt;
+&lt;<span class="hljs-keyword">div</span> <span class="hljs-type">class</span>=<span class="hljs-string">"am-list"</span> am-mode=<span class="hljs-string">"flat chip form"</span>&gt;
+    &lt;<span class="hljs-keyword">div</span> <span class="hljs-type">class</span>=<span class="hljs-string">"am-list-item am-input-autoclear"</span>&gt;
+        &lt;<span class="hljs-keyword">div</span> <span class="hljs-type">class</span>=<span class="hljs-string">"am-list-label"</span>&gt;校验码&lt;/<span class="hljs-keyword">div</span>&gt;
+        &lt;<span class="hljs-keyword">div</span> <span class="hljs-type">class</span>=<span class="hljs-string">"am-list-control"</span>&gt;
+            &lt;input type=<span class="hljs-string">"text"</span> placeholder=<span class="hljs-string">"右侧校验码"</span> value=<span class="hljs-string">""</span>&gt;
+        &lt;/<span class="hljs-keyword">div</span>&gt;
+        &lt;<span class="hljs-keyword">div</span> <span class="hljs-type">class</span>=<span class="hljs-string">"am-list-clear"</span>&gt;&lt;i <span class="hljs-type">class</span>=<span class="hljs-string">"am-icon-clear am-icon"</span> am-mode=<span class="hljs-string">"clear"</span>&gt;&lt;/i&gt;&lt;/<span class="hljs-keyword">div</span>&gt;
+        &lt;<span class="hljs-keyword">div</span> <span class="hljs-type">class</span>=<span class="hljs-string">"am-list-button"</span>&gt;
+            &lt;<span class="hljs-keyword">div</span> <span class="hljs-type">class</span>=<span class="hljs-string">"am-captcha-figure"</span>&gt;&lt;img src=<span class="hljs-string">"https://i.alipayobjects.com/i/ecmng/png/201501/49lsAmBWzl.png"</span>/&gt;&lt;/<span class="hljs-keyword">div</span>&gt;
+            &lt;a href=<span class="hljs-string">"#"</span> <span class="hljs-type">class</span>=<span class="hljs-string">"am-captcha-refresh am-icon"</span> am-mode=<span class="hljs-string">"captcha-refresh"</span>&gt;&lt;/a&gt;
+        &lt;/<span class="hljs-keyword">div</span>&gt;
+    &lt;/<span class="hljs-keyword">div</span>&gt;
+&lt;/<span class="hljs-keyword">div</span>&gt;
+&lt;<span class="hljs-keyword">div</span> <span class="hljs-type">class</span>=<span class="hljs-string">"am-list"</span> am-mode=<span class="hljs-string">"flat chip form 43px"</span>&gt;
+  &lt;<span class="hljs-keyword">div</span> <span class="hljs-type">class</span>=<span class="hljs-string">"am-list-item am-input-autoclear"</span>&gt;
+      &lt;<span class="hljs-keyword">div</span> <span class="hljs-type">class</span>=<span class="hljs-string">"am-list-label"</span>&gt;校验码&lt;/<span class="hljs-keyword">div</span>&gt;
+      &lt;<span class="hljs-keyword">div</span> <span class="hljs-type">class</span>=<span class="hljs-string">"am-list-control"</span>&gt;
+          &lt;input type=<span class="hljs-string">"text"</span> placeholder=<span class="hljs-string">"右校验码"</span> value=<span class="hljs-string">""</span>&gt;
+      &lt;/<span class="hljs-keyword">div</span>&gt;
+      &lt;<span class="hljs-keyword">div</span> <span class="hljs-type">class</span>=<span class="hljs-string">"am-list-clear"</span>&gt;&lt;i <span class="hljs-type">class</span>=<span class="hljs-string">"am-icon-clear am-icon"</span> am-mode=<span class="hljs-string">"clear"</span>&gt;&lt;/i&gt;&lt;/<span class="hljs-keyword">div</span>&gt;
+      &lt;<span class="hljs-keyword">div</span> <span class="hljs-type">class</span>=<span class="hljs-string">"am-list-button"</span>&gt;
+          &lt;<span class="hljs-keyword">div</span> <span class="hljs-type">class</span>=<span class="hljs-string">"am-captcha-figure"</span>&gt;&lt;button type=<span class="hljs-string">"button"</span> disabled=<span class="hljs-string">"disabled"</span>&gt;加载中&lt;/button&gt;&lt;/<span class="hljs-keyword">div</span>&gt;
+          &lt;a href=<span class="hljs-string">"#"</span> <span class="hljs-type">class</span>=<span class="hljs-string">"am-captcha-refresh am-icon"</span> am-mode=<span class="hljs-string">"captcha-refresh"</span>&gt;&lt;/a&gt;
+      &lt;/<span class="hljs-keyword">div</span>&gt;
+  &lt;/<span class="hljs-keyword">div</span>&gt;
+&lt;/<span class="hljs-keyword">div</span>&gt;
+</code></pre>

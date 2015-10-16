@@ -1,0 +1,220 @@
+<h3 id="dialog-since-9-0-">Dialog <code>弹窗  (since 9.0)</code></h3>
+<h4 id="preview-">preview <code>效果预览</code></h4>
+<ul>
+<li><strong>该Dialog仅特殊场景使用</strong></li>
+<li><strong>钱包容器内建议使用容器组件Confrim、Alert</strong></li>
+</ul>
+<div class="dpl-demo-wrap dpl-demo-dialog"><div class="dpl-demo">
+<div class="am-dialog" am-mode="show">
+    <div class="am-dialog-wrap">
+        <div class="am-dialog-header">
+            <h3>标题标题</h3>
+        </div>
+        <div class="am-dialog-body">
+            <p class="am-dialog-brief">说明内容说明内容说明内容说明内容说明内容说明内容说明内容说明内容说明内容说明内容</p>
+        </div>
+        <div class="am-dialog-footer">
+            <button type="button" class="am-dialog-button">取消</button>
+            <button type="button" class="am-dialog-button">确定</button>
+        </div>
+    </div>
+</div>
+</div></div>
+
+
+
+<h4 id="usage-">usage <code>使用方法</code></h4>
+<ul>
+<li><span class="widget-build build-no"><strong>AntUI默认未集成</strong></span></li>
+<li><span class="widget-mod"><strong>模块名：widget/dialog</strong></span></li>
+</ul>
+<p><a href="../8.7/nav.html#use" title="使用方式">使用方式</a></p>
+<h4 id="default-">default <code>基础样式</code></h4>
+<ul>
+<li><strong>弹框显示</strong> （am-mode=”show”）</li>
+</ul>
+<div class="dpl-demo-wrap dpl-demo-dialog"><div class="dpl-demo">
+<div class="am-dialog" am-mode="show">
+    <div class="am-dialog-wrap">
+        <div class="am-dialog-header">
+            <h3>标题标题</h3>
+        </div>
+        <div class="am-dialog-body">
+            <p class="am-dialog-brief">说明内容说明内容说明内容说明内容说明内容说明内容说明内容说明内容说明内容说明内容</p>
+        </div>
+        <div class="am-dialog-footer">
+            <button type="button" class="am-dialog-button">取消</button>
+            <button type="button" class="am-dialog-button">确定</button>
+        </div>
+    </div>
+</div>
+</div></div>
+
+<pre><code class="lang-html">&lt;div <span class="hljs-class"><span class="hljs-keyword">class</span>=</span><span class="hljs-string">"am-dialog"</span> am-mode=<span class="hljs-string">"show"</span>&gt;
+    &lt;div <span class="hljs-class"><span class="hljs-keyword">class</span>=</span><span class="hljs-string">"am-dialog-wrap"</span>&gt;
+        &lt;div <span class="hljs-class"><span class="hljs-keyword">class</span>=</span><span class="hljs-string">"am-dialog-header"</span>&gt;
+            &lt;h3&gt;标题标题&lt;/h3&gt;
+        &lt;/div&gt;
+        &lt;div <span class="hljs-class"><span class="hljs-keyword">class</span>=</span><span class="hljs-string">"am-dialog-body"</span>&gt;
+            &lt;p <span class="hljs-class"><span class="hljs-keyword">class</span>=</span><span class="hljs-string">"am-dialog-brief"</span>&gt;说明内容说明内容说明内容说明内容说明内容说明内容说明内容说明内容说明内容说明内容&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div <span class="hljs-class"><span class="hljs-keyword">class</span>=</span><span class="hljs-string">"am-dialog-footer"</span>&gt;
+            &lt;button <span class="hljs-class"><span class="hljs-keyword">type</span>=</span><span class="hljs-string">"button"</span> <span class="hljs-class"><span class="hljs-keyword">class</span>=</span><span class="hljs-string">"am-dialog-button"</span>&gt;取消&lt;/button&gt;
+            &lt;button <span class="hljs-class"><span class="hljs-keyword">type</span>=</span><span class="hljs-string">"button"</span> <span class="hljs-class"><span class="hljs-keyword">class</span>=</span><span class="hljs-string">"am-dialog-button"</span>&gt;确定&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<h4 id="no-title-">no-title <code>只有内容</code></h4>
+<div class="dpl-demo-wrap dpl-demo-dialog"><div class="dpl-demo">
+<div class="am-dialog" am-mode="show">
+    <div class="am-dialog-wrap">
+        <div class="am-dialog-body">
+            <p class="am-dialog-brief">说明内容说明内容说明内容说明内容说明内容说明内容说明内容说明内容说明内容说明内容</p>
+        </div>
+        <div class="am-dialog-footer">
+            <button type="button" class="am-dialog-button">取消</button>
+            <button type="button" class="am-dialog-button">确定</button>
+        </div>
+    </div>
+</div>
+</div></div>
+
+<pre><code class="lang-html">&lt;div <span class="hljs-class"><span class="hljs-keyword">class</span>=</span><span class="hljs-string">"am-dialog"</span> am-mode=<span class="hljs-string">"show"</span>&gt;
+    &lt;div <span class="hljs-class"><span class="hljs-keyword">class</span>=</span><span class="hljs-string">"am-dialog-wrap"</span>&gt;
+        &lt;div <span class="hljs-class"><span class="hljs-keyword">class</span>=</span><span class="hljs-string">"am-dialog-body"</span>&gt;
+            &lt;p <span class="hljs-class"><span class="hljs-keyword">class</span>=</span><span class="hljs-string">"am-dialog-brief"</span>&gt;说明内容说明内容说明内容说明内容说明内容说明内容说明内容说明内容说明内容说明内容&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div <span class="hljs-class"><span class="hljs-keyword">class</span>=</span><span class="hljs-string">"am-dialog-footer"</span>&gt;
+            &lt;button <span class="hljs-class"><span class="hljs-keyword">type</span>=</span><span class="hljs-string">"button"</span> <span class="hljs-class"><span class="hljs-keyword">class</span>=</span><span class="hljs-string">"am-dialog-button"</span>&gt;取消&lt;/button&gt;
+            &lt;button <span class="hljs-class"><span class="hljs-keyword">type</span>=</span><span class="hljs-string">"button"</span> <span class="hljs-class"><span class="hljs-keyword">class</span>=</span><span class="hljs-string">"am-dialog-button"</span>&gt;确定&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<h4 id="no-brief-">no-brief <code>只有标题</code></h4>
+<div class="dpl-demo-wrap dpl-demo-dialog"><div class="dpl-demo">
+<div class="am-dialog" am-mode="show">
+    <div class="am-dialog-wrap">
+        <div class="am-dialog-header">
+            <h3>只有标题</h3>
+        </div>
+        <div class="am-dialog-footer">
+            <button type="button" class="am-dialog-button">取消</button>
+            <button type="button" class="am-dialog-button">确定</button>
+        </div>
+    </div>
+</div>
+</div></div>
+
+<pre><code class="lang-html">&lt;div <span class="hljs-class"><span class="hljs-keyword">class</span>=</span><span class="hljs-string">"am-dialog"</span> am-mode=<span class="hljs-string">"show"</span>&gt;
+    &lt;div <span class="hljs-class"><span class="hljs-keyword">class</span>=</span><span class="hljs-string">"am-dialog-wrap"</span>&gt;
+        &lt;div <span class="hljs-class"><span class="hljs-keyword">class</span>=</span><span class="hljs-string">"am-dialog-header"</span>&gt;
+            &lt;h3&gt;只有标题&lt;/h3&gt;
+        &lt;/div&gt;
+        &lt;div <span class="hljs-class"><span class="hljs-keyword">class</span>=</span><span class="hljs-string">"am-dialog-footer"</span>&gt;
+            &lt;button <span class="hljs-class"><span class="hljs-keyword">type</span>=</span><span class="hljs-string">"button"</span> <span class="hljs-class"><span class="hljs-keyword">class</span>=</span><span class="hljs-string">"am-dialog-button"</span>&gt;取消&lt;/button&gt;
+            &lt;button <span class="hljs-class"><span class="hljs-keyword">type</span>=</span><span class="hljs-string">"button"</span> <span class="hljs-class"><span class="hljs-keyword">class</span>=</span><span class="hljs-string">"am-dialog-button"</span>&gt;确定&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<h4 id="one-button-">one-button <code>一个按钮</code></h4>
+<div class="dpl-demo-wrap dpl-demo-dialog"><div class="dpl-demo">
+<div class="am-dialog" am-mode="show">
+    <div class="am-dialog-wrap">
+        <div class="am-dialog-header">
+            <h3>一个按钮</h3>
+        </div>
+        <div class="am-dialog-body">
+            <p class="am-dialog-brief">说明内容说明内容说明内容说明内容说明内容说明内容说明内容说明内容说明内容说明内容</p>
+        </div>
+        <div class="am-dialog-footer">
+            <button type="button" class="am-dialog-button">确定</button>
+        </div>
+    </div>
+</div>
+</div></div>
+
+<pre><code class="lang-html">&lt;<span class="hljs-keyword">div</span> <span class="hljs-type">class</span>=<span class="hljs-string">"am-dialog"</span> am-mode=<span class="hljs-string">"show"</span>&gt;
+    &lt;<span class="hljs-keyword">div</span> <span class="hljs-type">class</span>=<span class="hljs-string">"am-dialog-wrap"</span>&gt;
+        &lt;<span class="hljs-keyword">div</span> <span class="hljs-type">class</span>=<span class="hljs-string">"am-dialog-header"</span>&gt;
+            &lt;h3&gt;一个按钮&lt;/h3&gt;
+        &lt;/<span class="hljs-keyword">div</span>&gt;
+        &lt;<span class="hljs-keyword">div</span> <span class="hljs-type">class</span>=<span class="hljs-string">"am-dialog-body"</span>&gt;
+            &lt;p <span class="hljs-type">class</span>=<span class="hljs-string">"am-dialog-brief"</span>&gt;说明内容说明内容说明内容说明内容说明内容说明内容说明内容说明内容说明内容说明内容&lt;/p&gt;
+        &lt;/<span class="hljs-keyword">div</span>&gt;
+        &lt;<span class="hljs-keyword">div</span> <span class="hljs-type">class</span>=<span class="hljs-string">"am-dialog-footer"</span>&gt;
+            &lt;button type=<span class="hljs-string">"button"</span> <span class="hljs-type">class</span>=<span class="hljs-string">"am-dialog-button"</span>&gt;确定&lt;/button&gt;
+        &lt;/<span class="hljs-keyword">div</span>&gt;
+    &lt;/<span class="hljs-keyword">div</span>&gt;
+&lt;/<span class="hljs-keyword">div</span>&gt;
+</code></pre>
+<h4 id="button-disabeld-">button-disabeld <code>按钮不可用</code></h4>
+<div class="dpl-demo-wrap dpl-demo-dialog"><div class="dpl-demo">
+<div class="am-dialog" am-mode="show">
+    <div class="am-dialog-wrap">
+        <div class="am-dialog-header">
+            <h3>按钮不可用</h3>
+        </div>
+        <div class="am-dialog-body">
+            <p class="am-dialog-brief">说明内容说明内容说明内容说明内容说明内容说明内容说明内容说明内容说明内容说明内容</p>
+        </div>
+        <div class="am-dialog-footer">
+            <button type="button" class="am-dialog-button">取消</button>
+            <button type="button" class="am-dialog-button" disabled="disabled">确定</button>
+        </div>
+    </div>
+</div>
+</div></div>
+
+<pre><code class="lang-html">&lt;div <span class="hljs-class"><span class="hljs-keyword">class</span>=</span><span class="hljs-string">"am-dialog"</span> am-mode=<span class="hljs-string">"show"</span>&gt;
+    &lt;div <span class="hljs-class"><span class="hljs-keyword">class</span>=</span><span class="hljs-string">"am-dialog-wrap"</span>&gt;
+        &lt;div <span class="hljs-class"><span class="hljs-keyword">class</span>=</span><span class="hljs-string">"am-dialog-header"</span>&gt;
+            &lt;h3&gt;按钮不可用&lt;/h3&gt;
+        &lt;/div&gt;
+        &lt;div <span class="hljs-class"><span class="hljs-keyword">class</span>=</span><span class="hljs-string">"am-dialog-body"</span>&gt;
+            &lt;p <span class="hljs-class"><span class="hljs-keyword">class</span>=</span><span class="hljs-string">"am-dialog-brief"</span>&gt;说明内容说明内容说明内容说明内容说明内容说明内容说明内容说明内容说明内容说明内容&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div <span class="hljs-class"><span class="hljs-keyword">class</span>=</span><span class="hljs-string">"am-dialog-footer"</span>&gt;
+            &lt;button <span class="hljs-class"><span class="hljs-keyword">type</span>=</span><span class="hljs-string">"button"</span> <span class="hljs-class"><span class="hljs-keyword">class</span>=</span><span class="hljs-string">"am-dialog-button"</span>&gt;取消&lt;/button&gt;
+            &lt;button <span class="hljs-class"><span class="hljs-keyword">type</span>=</span><span class="hljs-string">"button"</span> <span class="hljs-class"><span class="hljs-keyword">class</span>=</span><span class="hljs-string">"am-dialog-button"</span> disabled=<span class="hljs-string">"disabled"</span>&gt;确定&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<h4 id="input-text-">input-text <code>带输入框</code></h4>
+<div class="dpl-demo-wrap dpl-demo-dialog"><div class="dpl-demo">
+<div class="am-dialog" am-mode="show">
+    <div class="am-dialog-wrap">
+        <div class="am-dialog-header">
+            <h3>带输入框</h3>
+        </div>
+        <div class="am-dialog-body">
+            <p class="am-dialog-brief">说明内容说明内容</p>
+            <input class="am-password-former" type="password" maxlength="6" size="6" value="" placeholder="暗提示暗提示"/>
+        </div>
+        <div class="am-dialog-footer">
+            <button type="button" class="am-dialog-button">取消</button>
+            <button type="button" class="am-dialog-button" disabled="disabled">确定</button>
+        </div>
+    </div>
+</div>
+</div></div>
+
+<pre><code class="lang-html">&lt;div <span class="hljs-class"><span class="hljs-keyword">class</span>=</span><span class="hljs-string">"am-dialog"</span> am-mode=<span class="hljs-string">"show"</span>&gt;
+    &lt;div <span class="hljs-class"><span class="hljs-keyword">class</span>=</span><span class="hljs-string">"am-dialog-wrap"</span>&gt;
+        &lt;div <span class="hljs-class"><span class="hljs-keyword">class</span>=</span><span class="hljs-string">"am-dialog-header"</span>&gt;
+            &lt;h3&gt;带输入框&lt;/h3&gt;
+        &lt;/div&gt;
+        &lt;div <span class="hljs-class"><span class="hljs-keyword">class</span>=</span><span class="hljs-string">"am-dialog-body"</span>&gt;
+            &lt;p <span class="hljs-class"><span class="hljs-keyword">class</span>=</span><span class="hljs-string">"am-dialog-brief"</span>&gt;说明内容说明内容&lt;/p&gt;
+            &lt;input <span class="hljs-class"><span class="hljs-keyword">class</span>=</span><span class="hljs-string">"am-password-former"</span> <span class="hljs-class"><span class="hljs-keyword">type</span>=</span><span class="hljs-string">"password"</span> maxlength=<span class="hljs-string">"6"</span> size=<span class="hljs-string">"6"</span> value=<span class="hljs-string">""</span> placeholder=<span class="hljs-string">"暗提示暗提示"</span>/&gt;
+        &lt;/div&gt;
+        &lt;div <span class="hljs-class"><span class="hljs-keyword">class</span>=</span><span class="hljs-string">"am-dialog-footer"</span>&gt;
+            &lt;button <span class="hljs-class"><span class="hljs-keyword">type</span>=</span><span class="hljs-string">"button"</span> <span class="hljs-class"><span class="hljs-keyword">class</span>=</span><span class="hljs-string">"am-dialog-button"</span>&gt;取消&lt;/button&gt;
+            &lt;button <span class="hljs-class"><span class="hljs-keyword">type</span>=</span><span class="hljs-string">"button"</span> <span class="hljs-class"><span class="hljs-keyword">class</span>=</span><span class="hljs-string">"am-dialog-button"</span> disabled=<span class="hljs-string">"disabled"</span>&gt;确定&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
