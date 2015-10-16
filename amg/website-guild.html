@@ -1,0 +1,440 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="generator" content="nico 0.5.1">
+    <meta name="theme" content="autumn 0.1">
+    <meta name="keywords" content="支付宝,无线前端,web解决方案,前端,mobile">
+    <title>无线建站指南 - 5分钟入门 | AM - 移动Web开放解决方案</title>
+    <link rel="stylesheet" href="../static/1140.css"/>
+    <link rel="stylesheet" href="../static/wiki.css"/>
+    <link rel="stylesheet" href="../static/syntax.css"/>
+</head>
+<body>
+<div class="goTop">
+    <span>Go TOP</span>
+</div>
+<div class="wrap">
+    <div class="main">
+        <div class="header">
+            <div class="slogan row">
+                <a href="../default.html"><img src="https://i.alipayobjects.com/i/ecmng/png/201406/2m8Ebk4eZh.png"
+                                               class="slogan-logo" alt="alipay"/></a>
+                <span>移动Web解决方案</span>
+                <button type="button" class="navbar-toggle">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+            </div>
+            <div class="header-nav">
+                <div class="navigation row-n">
+                    
+<ul class="nav">
+    <li>
+        <a  archiveId = "about"
+        href="../about/about.html">
+        关于AM </a>
+        
+    </li>
+    
+    <li>
+        <a  class="active"  archiveId = "amg"
+        href="dev-guild.html">
+        开发指南 </a>
+        
+        <ul class="nav-sub">
+            <li>
+                <a href="dev-guild.html">移动开发规范</a>
+            </li>
+            
+            <li>
+                <a href="mobile-platform-grade.html">移动分级标准</a>
+            </li>
+            
+            <li>
+                <a href="dev-exp-doc.html">移动开发经验谈</a>
+            </li>
+            
+            <li>
+                <a href="website-guild.html">移动建站指南</a>
+            </li>
+            
+            <li>
+                <a href="https://github.com/am-team/amDoc/../">Github</a>
+            </li>
+            
+        </ul>
+        
+    </li>
+    
+    <li>
+        <a  archiveId = "amui"
+        href="../amui/about.html">
+        AMUI </a>
+        
+        <ul class="nav-sub">
+            <li>
+                <a href="../amui/about.html">关于AMUI</a>
+            </li>
+            
+            <li>
+                <a href="../amui/amui-doc.html">接口文档</a>
+            </li>
+            
+            <li>
+                <a href="https://github.com/am-team/amUI/../">Github</a>
+            </li>
+            
+        </ul>
+        
+    </li>
+    
+    <li>
+        <a  archiveId = "amj"
+        href="../amj/about.html">
+        AMJ </a>
+        
+        <ul class="nav-sub">
+            <li>
+                <a href="../amj/about.html">关于AMJ</a>
+            </li>
+            
+            <li>
+                <a href="../amj/aj-doc.html">接口文档</a>
+            </li>
+            
+            <li>
+                <a href="https://github.com/am-team/amJS/../">Github</a>
+            </li>
+            
+        </ul>
+        
+    </li>
+    
+    <li>
+        <a  archiveId = "amw"
+        href="../amw/about.html">
+        AMW </a>
+        
+        <ul class="nav-sub">
+            <li>
+                <a href="../amw/about.html">关于AMW</a>
+            </li>
+            
+            <li>
+                <a href="../amw/aw-doc.html">接口文档</a>
+            </li>
+            
+            <li>
+                <a href="https://github.com/am-team/amWidget/../">Github</a>
+            </li>
+            
+        </ul>
+        
+    </li>
+    
+    <li>
+        <a  archiveId = "H5Container"
+        href="../h5container/about.html">
+        H5Container </a>
+        
+        <ul class="nav-sub">
+            <li>
+                <a href="../h5container/about.html">关于H5Container</a>
+            </li>
+            
+            <li>
+                <a href="../h5container/ab-doc.html">Bridge组件（内测中）</a>
+            </li>
+            
+            <li>
+                <a href="../h5container/jsapi-doc.html">JSAPI 接口文档</a>
+            </li>
+            
+        </ul>
+        
+    </li>
+    
+    <li>
+        <a  archiveId = "wiki"
+        href="../">
+        知识库 </a>
+        
+        <ul class="nav-sub">
+            <li>
+                <a href="../wiki/bookmark.html">收藏阁</a>
+            </li>
+            
+        </ul>
+        
+    </li>
+    
+    <li>
+        <a  archiveId = "issue"
+        href="https://github.com/am-team/amWiki/issues/new/../">
+        提建议 </a>
+        
+    </li>
+    
+    <li>
+        <a  archiveId = "joinus"
+        href="../amteam/join.html">
+        加入我们 </a>
+        
+    </li>
+    
+</ul>
+
+                </div>
+            </div>
+        </div>
+        
+<div class="row mar">
+    <div class="threecol meta">
+    </div>
+    
+ 
+    <div class="ninecol content">
+        <div class="document">
+            <div class="post-header">
+                <h2 class="document-title">无线建站指南 - 5分钟入门</h2>
+
+                <div class="post-meta">
+                    <!--<span>轩与</span> /-->
+                    <time datetime="2014-01-23">2014-01-23</time>
+                </div>
+            </div>
+            <div class="entry-content">
+                <p>5分钟构建一个无线站点，为了便于大家理解，我们举一个账号登陆页面的例子</p>
+<h2 id="第一步-新建页面">第一步 新建页面</h2><p>新建一个文件，把后缀名改成html结尾，用任意一款编辑器打开此html页面，粘贴以下代码</p>
+<div class="highlight"><pre><code class="xml">    <span class="doctype">&lt;!DOCTYPE html&gt;</span>
+    <span class="tag">&lt;<span class="title">html</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">head</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"utf-8"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">title</span>&gt;</span><span class="tag">&lt;/<span class="title">title</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">name</span>=<span class="value">"apple-mobile-web-app-capable"</span> <span class="attribute">content</span>=<span class="value">"yes"</span>/&gt;</span>
+    <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">name</span>=<span class="value">"apple-mobile-web-app-status-bar-style"</span> <span class="attribute">content</span>=<span class="value">"black"</span>/&gt;</span>
+    <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">name</span>=<span class="value">"format-detection"</span> <span class="attribute">content</span>=<span class="value">"telephone=no"</span>/&gt;</span>
+    <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">name</span>=<span class="value">"format-detection"</span> <span class="attribute">content</span>=<span class="value">"email=no"</span>/&gt;</span>
+    <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">name</span>=<span class="value">"viewport"</span>
+          <span class="attribute">content</span>=<span class="value">"width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0"</span>/&gt;</span>
+    <span class="tag">&lt;/<span class="title">head</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">body</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">body</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">html</span>&gt;</span></code></pre></div><h3 id="注意事项"><em>注意事项</em></h3><ol>
+<li>页面中utf-8的编码需要放在头部第一行</li>
+<li>对于telephone和email视页面中是否需要</li>
+<li>viewport建议使用该配置，如果需要修改，建议<a href="https://developer.apple.com/library/ios/documentation/appleapplications/reference/safariwebcontent/usingtheviewport/usingtheviewport.html">参考文档</a></li>
+</ol>
+<h2 id="第二步-加入css样式">第二步 加入CSS样式</h2><p>光秃秃的页面非常不好看，为此我们设计了一个完整的UI，提供了各类丰富的组件，只要简单地引入一个CSS链接即可.在viewport标签下引入一个CSS地址，参考代码如下</p>
+<div class="highlight"><pre><code class="xml">    <span class="doctype">&lt;!DOCTYPE html&gt;</span>
+    <span class="tag">&lt;<span class="title">html</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">head</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"utf-8"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">title</span>&gt;</span><span class="tag">&lt;/<span class="title">title</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">name</span>=<span class="value">"apple-mobile-web-app-capable"</span> <span class="attribute">content</span>=<span class="value">"yes"</span>/&gt;</span>
+    <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">name</span>=<span class="value">"apple-mobile-web-app-status-bar-style"</span> <span class="attribute">content</span>=<span class="value">"black"</span>/&gt;</span>
+    <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">name</span>=<span class="value">"format-detection"</span> <span class="attribute">content</span>=<span class="value">"telephone=no"</span>/&gt;</span>
+    <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">name</span>=<span class="value">"format-detection"</span> <span class="attribute">content</span>=<span class="value">"email=no"</span>/&gt;</span>
+    <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">name</span>=<span class="value">"viewport"</span>
+          <span class="attribute">content</span>=<span class="value">"width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0"</span>/&gt;</span>
+    <span class="tag">&lt;<span class="title">link</span> <span class="attribute">rel</span>=<span class="value">"stylesheet"</span> <span class="attribute">type</span>=<span class="value">"text/css"</span> <span class="attribute">href</span>=<span class="value">"https://a.alipayobjects.com/amui/dpl/1.0.2/amui.css"</span> <span class="attribute">media</span>=<span class="value">"all"</span>/&gt;</span>
+    <span class="tag">&lt;/<span class="title">head</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">body</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">body</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">html</span>&gt;</span></code></pre></div><p>引入该css之后，就可以开始进行布局和设计各种控件类型了，具体内容可以参考如下<a href="http://aliceui.org/mobile/openapi.html">文档地址</a></p>
+<p>登陆页面需要一个用户名和密码的输入列表，我们在amui中找到相应的控件，将其html贴入页面中，示例代码如下</p>
+<div class="highlight"><pre><code class="xml">    <span class="doctype">&lt;!DOCTYPE html&gt;</span>
+    <span class="tag">&lt;<span class="title">html</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">head</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"utf-8"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">title</span>&gt;</span><span class="tag">&lt;/<span class="title">title</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">name</span>=<span class="value">"apple-mobile-web-app-capable"</span> <span class="attribute">content</span>=<span class="value">"yes"</span>/&gt;</span>
+    <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">name</span>=<span class="value">"apple-mobile-web-app-status-bar-style"</span> <span class="attribute">content</span>=<span class="value">"black"</span>/&gt;</span>
+    <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">name</span>=<span class="value">"format-detection"</span> <span class="attribute">content</span>=<span class="value">"telephone=no"</span>/&gt;</span>
+    <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">name</span>=<span class="value">"format-detection"</span> <span class="attribute">content</span>=<span class="value">"email=no"</span>/&gt;</span>
+    <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">name</span>=<span class="value">"viewport"</span>
+          <span class="attribute">content</span>=<span class="value">"width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0"</span>/&gt;</span>
+    <span class="tag">&lt;/<span class="title">head</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">body</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">body</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">html</span>&gt;</span></code></pre></div><h3 id="注意事项"><em>注意事项</em></h3><ol>
+<li>页面中utf-8的编码需要放在头部第一行</li>
+<li>对于telephone和email视页面中是否需要</li>
+<li>viewport建议使用该配置，如果需要修改，建议<a href="https://developer.apple.com/library/ios/documentation/appleapplications/reference/safariwebcontent/usingtheviewport/usingtheviewport.html">参考文档</a></li>
+</ol>
+<p>登陆页面需要一个用户名和密码的输入列表，我们在amui中找到相应的控件，将其html贴入页面中，示例代码如下</p>
+<pre>    &lt;!DOCTYPE html&gt;
+    &lt;html&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;utf-8&quot;&gt;
+        &lt;title&gt;演示示例&lt;/title&gt;
+        &lt;meta name=&quot;apple-mobile-web-app-capable&quot; content=&quot;yes&quot;/&gt;
+        &lt;meta name=&quot;apple-mobile-web-app-status-bar-style&quot; content=&quot;black&quot;/&gt;
+        &lt;meta name=&quot;format-detection&quot; content=&quot;telephone=no&quot;/&gt;
+        &lt;meta name=&quot;format-detection&quot; content=&quot;email=no&quot;/&gt;
+        &lt;meta name=&quot;viewport&quot;
+              content=&quot;width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0&quot;/&gt;
+        &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;https://a.alipayobjects.com/amui/dpl/1.0.2/amui.css&quot; media=&quot;all&quot;/&gt;
+        &lt;style&gt;
+            .am-list{
+                margin: 20px;
+            }
+            .button-grps{
+                margin: 20px;
+            }
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+    &lt;div class=&quot;am-header&quot;&gt;
+        &lt;h1&gt;用户登录&lt;/h1&gt;
+        &lt;a href=&quot;#&quot; class=&quot;am-header-reverse am-header-reverse-btn&quot;&gt;返回&lt;/a&gt;
+        &lt;a href=&quot;#&quot; class=&quot;am-header-operate am-header-operate-btn&quot;&gt;注册&lt;/a&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;am-list&quot;&gt;
+        &lt;div class=&quot;am-list-item am-list-item-form am-flexbox&quot;&gt;
+            &lt;div class=&quot;am-flexbox-item&quot;&gt;
+                &lt;input type=&quot;text&quot; placeholder=&quot;手机号/会员名&quot; value=&quot;&quot;&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;am-list-item am-list-item-form am-flexbox&quot;&gt;
+            &lt;div class=&quot;am-flexbox-item&quot;&gt;
+                &lt;input type=&quot;text&quot; placeholder=&quot;登录密码&quot; value=&quot;&quot;&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;am-flexbox am-flexbox-average button-grps&quot;&gt;
+        &lt;div class=&quot;am-flexbox-item &quot;&gt;
+            &lt;button type=&quot;button&quot; class=&quot;am-button am-button-white&quot;&gt;忘记密码&lt;/button&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;am-flexbox-item&quot;&gt;
+            &lt;button type=&quot;button&quot; class=&quot;am-button am-button-blue&quot;&gt;登录&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;/body&gt;
+    &lt;/html&gt;</pre><p> 登陆页面就好了，效果图如下：
+ <img src="https://i.alipayobjects.com/i/localhost/jpg/201406/2n4ibcN40L.jpg" alt="登陆效果图">
+ 一个完整的页面已经呈现在我们面前了</p>
+<h2 id="第三步-加入脚本">第三步 加入脚本</h2><p> 当页面都完成之后，接下来就需要加入务逻辑了，让这个页面能够响应用户的操作，这时候，就需要javascript出场了，在PC时候，用的最多的是jQuery，它的好处毋庸置疑，在移动端，有个类似的类库叫Zepto，功能强大，并且简单易用，兼容jQuery常用API。以下是它的地址：<a href="http://zeptojs.com">zeptojs</a>。</p>
+<p> 通过zepto的api，在各个按钮上加上事件，整个页面就此完成</p>
+<p> <em>移动端做页面就那么简单!</em></p>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+ 
+ 
+    </div>
+</div>
+<div class="footer">
+    <div class="grid-990 sitelink fn-clear" coor="sitelink" role="contentinfo">
+        <ul class="ui-link fn-clear">
+            <!-- XT:支付宝首页/默认频道/支付宝新首页开始:www.alipay.com/i/indexb.vm -->
+            <li class="ui-link-item"><a href="http://ab.alipay.com/i/index.htm" target="_blank" title="关于支付宝"
+                                        seed="grid990-link" smartracker="on">关于支付宝</a></li>
+            <li class="ui-link-item"><a href="http://blog.alipay.com/" target="_blank" title="官方博客"
+                                        seed="grid990-linkT1" smartracker="on">官方博客</a></li>
+            <li class="ui-link-item"><a href="http://job.alipay.com/index.php" target="_blank" title="诚征英才"
+                                        seed="grid990-linkT2" smartracker="on">诚征英才</a></li>
+            <li class="ui-link-item"><a href="https://open.alipay.com/index.htm" target="_blank" title="开放平台"
+                                        seed="grid990-linkT3" smartracker="on">开放平台</a></li>
+            <li class="ui-link-item"><a href="http://ab.alipay.com/i/lianxi.htm" target="_blank" title="联系我们"
+                                        seed="grid990-linkT4" smartracker="on">联系我们</a></li>
+            <li class="ui-link-item"><a href="http://fun.alipay.com/sitemap/index.htm" target="_blank" title="网站地图"
+                                        seed="grid990-linkT5" smartracker="on">网站地图</a></li>
+            <li class="ui-link-item"><a href="http://global.alipay.com/ospay/home.htm" target="_blank"
+                                        title="International Business" seed="grid990-International-Business"
+                                        smartracker="on">International Business</a></li>
+            <li class="ui-link-item ui-link-item-last"><a href="http://ab.alipay.com/i/jieshao.htm#en" target="_blank"
+                                                          title="About Alipay" seed="grid990-About-Alipay"
+                                                          smartracker="on">About Alipay</a></li>
+            <!-- XT:支付宝首页/默认频道/支付宝新首页结束:www.alipay.com/i/indexb.vm -->        </ul>
+        <ul class="ui-link fn-clear">
+            <!-- XT:支付宝首页/默认频道/支付宝新首页开始:www.alipay.com/i/indexb.vm -->
+            <li class="ui-link-item"><a href="http://page.1688.com/shtml/about/ali_group1.shtml" target="_blank"
+                                        title="阿里巴巴集团" seed="grid990-linkT7" smartracker="on">阿里巴巴集团</a></li>
+            <li class="ui-link-item"><a href="http://www.alibaba.com/" target="_blank" title="阿里巴巴国际站"
+                                        seed="grid990-linkT8" smartracker="on">阿里巴巴国际站</a></li>
+            <li class="ui-link-item"><a href="http://www.1688.com/" target="_blank" title="阿里巴巴中国站"
+                                        seed="grid990-linkT9" smartracker="on">阿里巴巴中国站</a></li>
+            <li class="ui-link-item"><a href="http://www.aliexpress.com/" target="_blank" title="全球速卖通"
+                                        seed="grid990-linkT10" smartracker="on">全球速卖通</a></li>
+            <li class="ui-link-item"><a href="http://www.taobao.com/" target="_blank" title="淘宝网" seed="grid990-linkT11"
+                                        smartracker="on">淘宝网</a></li>
+            <li class="ui-link-item"><a href="http://www.tmall.com/" target="_blank" title="天猫" seed="grid990-linkT12"
+                                        smartracker="on">天猫</a></li>
+            <li class="ui-link-item"><a href="http://ju.taobao.com" target="_blank" title="聚划算" seed="grid990-linkT13"
+                                        smartracker="on">聚划算</a></li>
+            <li class="ui-link-item"><a href="http://www.etao.com/?tbpm=t" target="_blank" title="一淘"
+                                        seed="grid990-linkT14" smartracker="on">一淘</a></li>
+            <li class="ui-link-item"><a href="http://www.alimama.com/index.htm" target="_blank" title="阿里妈妈"
+                                        seed="grid990-linkT15" smartracker="on">阿里妈妈</a></li>
+            <li class="ui-link-item"><a href="http://trip.taobao.com/" target="_blank" title="淘宝旅行"
+                                        seed="grid990-linkT16" smartracker="on">淘宝旅行</a></li>
+            <li class="ui-link-item"><a href="http://www.xiami.com/" target="_blank" title="虾米" seed="grid990-linkT17"
+                                        smartracker="on">虾米</a></li>
+            <li class="ui-link-item"><a href="http://www.aliyun.com/" target="_blank" title="阿里云计算"
+                                        seed="grid990-linkT18" smartracker="on">阿里云计算</a></li>
+            <li class="ui-link-item"><a href="http://www.yunos.com/" target="_blank" title="云OS" seed="grid990-linkT19"
+                                        smartracker="on">云OS</a></li>
+            <li class="ui-link-item"><a href="http://www.net.cn/" target="_blank" title="万网" seed="grid990-linkT20"
+                                        smartracker="on">万网</a></li>
+            <li class="ui-link-item"><a href="https://www.alipay.com/" target="_blank" title="支付宝"
+                                        seed="grid990-linkT21" smartracker="on">支付宝</a></li>
+            <li class="ui-link-item ui-link-item-last"><a href="https://www.laiwang.com/" target="_blank" title="来往"
+                                                          seed="grid990-linkT22" smartracker="on">来往</a></li>
+            <!-- XT:支付宝首页/默认频道/支付宝新首页结束:www.alipay.com/i/indexb.vm -->        </ul>
+        <ul class="ui-link ui-link-bottom fn-clear">
+            <li class="ui-link-item ui-link-item-last">支付宝版权所有 2004-2014 <a
+                    href="http://fun.alipay.com/certificate/jyxkz.htm" target="_blank" seed="grid990-linkT6"
+                    smartracker="on">ICP证: 浙B2-20120045</a></li>
+        </ul>
+
+    </div>
+</div>
+</body>
+<script src="http://static.alipayobjects.com/seajs/1.2.1/sea.js" data-main="../static/global.js"></script>
+<script>
+    seajs.config({
+        alias: {
+            "$": 'jquery/jquery/1.7.2/jquery'
+        }
+    });
+    //        seajs.use(['arale/autocomplete/1.2.3/autocomplete','$'], function(AutoComplete,$) {
+    //          $('.logo').click(function (e) {
+    //              $('body,html').animate({
+    //                scrollTop: 0
+    //          }, 500);
+    //            e.preventDefault();
+    //          });
+    //            new AutoComplete({
+    //                trigger: '#search',
+    //                filter:"stringMatch",
+    //                dataSource: [
+    //"../about/about.html","dev-exp-doc.html","mobile-platform-grade.html","website-guild.html","../amj/about.html","../amj/aj-doc.html","../amteam/join.html","../amui/about.html","../amui/amui-doc.html","../amw/about.html","../amw/aw-doc.html","../default.html","../h5container/ab-doc.html","../h5container/about.html","../h5container/jsapi-doc.html","../wiki/bookmark.html",
+    //                ]
+    //            }).render().on('itemSelect',function  (data) {
+    //              window.location = data.matchKey;
+    //            });
+    //        });
+    //解决nav中包含http或者https时候的bug
+    seajs.use("$", function ($) {
+//            console.log($);
+        $('.nav a').on("click", function (e) {
+//            e.preventDefault();
+            var link = $(this).attr("href");
+//            console.log(link);
+            if (link.indexOf("http") == 0) {
+                $(this).attr("target", "_blank");
+                $(this).attr("href",link.replace("../", ""));
+            }
+        });
+    });
+</script>
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1252894789'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s23.cnzz.com/z_stat.php%3Fid%3D1252894789%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script>
+</html>

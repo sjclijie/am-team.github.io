@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Uri Demo示例</title>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="format-detection" content="email=no"/>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0"/>
+    <link rel="stylesheet" type="text/css" href="https://a.alipayobjects.com/amui/base/1.0.1/amui-https.css"
+          media="all">
+    <link rel="stylesheet" href="lib/test.css"/>
+    <script src="lib/zepto.js"></script>
+    <script src="lib/test.js"></script>
+    <script src="lib/aj.js"></script>
+    <script src="lib/test.js"></script>
+</head>
+<body ontouchstart="">
+<div class="am-header">
+    <h1>Uri Demo</h1>
+</div>
+
+<div id="tests"></div>
+<div class="unit tpl" style="display: none">
+    <div class="contain">
+        <p style="font-weight: bold;font-size: 18px">$$name</p>
+        <h5>示例代码</h5>
+
+        <div class="pre">$$code</div>
+
+        <h5>预期结果</h5>
+
+        <div class="predict">$$predict</div>
+        <h5>结果</h5>
+
+        <div class="ret"></div>
+        <a href="javascript:;" onclick="clearRet(this)">清除结果</a>
+        <a href="javascript:;" onclick="$$command" class="am-button am-button-sm">运行</a>
+    </div>
+</div>
+<script type="text/javascript">
+    var testUnits = [
+        {
+            name: "解析当前的url地址到uri对象",
+            code: "AJ.uri.parse(location.href)",
+            command: function (context) {
+                showRet.call(context, AJ.uri.parse(location.href));
+            },
+            predict: function () {
+                var str = "当前url地址：" + location.href;
+                return str;
+            }
+        },
+        {
+            name: "用stringify方法将uri转换成string",
+            code: "AJ.uri.stringify(AJ.uri.parse(location.href))",
+            command: function (context) {
+                showRet.call(context, AJ.uri.stringify(AJ.uri.parse(location.href)));
+            },
+            predict: function () {
+                return "当前url地址：" + location.href;
+            }
+        },
+        {
+            name: "当前地址增加 a=中文b 的参数",
+            code: 'AJ.uri.setParam(location.href, "a", "中文b")',
+            command: function (context) {
+                showRet.call(context, AJ.uri.setParam(location.href, "a", "中文b"));
+            },
+            predict: function () {
+                return "生成url中 包含a=%E4%B8%AD%E6%96%87b";
+            }
+        },
+        {
+            name: '当前地址批量增加的参数{a:"中文b"，name:"John",age:23}',
+            code: 'AJ.uri.setParam(location.href, "a", "中文b")',
+            command: function (context) {
+                showRet.call(context, AJ.uri.setParam(location.href, {a: "中文b", name: "John", age: 23}));
+            },
+            predict: function () {
+                return "生成url中 包含a=%E4%B8%AD%E6%96%87b&name=John&age=23";
+            }
+        },
+        {
+            name: "当前地址增加 a=中文b 的参数,当前地址已包含a",
+            code: 'AJ.uri.setParam("http://localhost:63342/amJS/examples/uri.html?a=%E4%B8%AD%E6%96%87b", "a", "bbb")',
+            command: function (context) {
+                showRet.call(context, AJ.uri.setParam("http://localhost:63342/amJS/examples/uri.html?a=%E4%B8%AD%E6%96%87b", "a", "bbb"));
+            },
+            predict: function () {
+                return "http://localhost:63342/amJS/examples/uri.html?a=bbb";
+            }
+        },
+        {
+            name: "获取a的参数",
+            code: 'AJ.uri.getParam("http://www.alipay.com?a=中文&c=12", "a")',
+            command: function (context) {
+                showRet.call(context, AJ.uri.getParam("http://www.alipay.com?a=中文&c=12", "a"));
+            },
+            predict: '中文'
+        },
+        {
+            name: "删除a的参数",
+            code: 'AJ.uri.removeParam("http://www.alipay.com?a=%E4%B8%AD%E6%96%87bb&c=12", "a")',
+            command: function (context) {
+                showRet.call(context, AJ.uri.removeParam("http://www.alipay.com?a=%E4%B8%AD%E6%96%87b&c=12", "a"));
+            },
+            predict: 'http://www.alipay.com?c=12'
+        }
+    ];
+
+    function createUnitLayout() {
+        testUnits.forEach(function (unit, index) {
+            $("#tests").append(paresTpl(testUnits[index], index));
+        });
+
+    }
+
+    function paresTpl(data, count) {
+//        var id = "testId_" + 1000 + parseInt(Math.random() * 8999);
+        var tpl = $(".tpl").clone(true).removeClass("tpl").show().html();
+        for (var name in data) {
+            if (name === "command") {
+                tpl = tpl.replace("$$" + name, "testUnits[" + count + "].command(this)");
+            } else {
+                tpl = tpl.replace("$$" + name, typeof data[name] === "function" ? data[name]() : data[name]);
+            }
+        }
+        return tpl;
+    }
+
+    createUnitLayout();
+</script>
+</body>
+</html>

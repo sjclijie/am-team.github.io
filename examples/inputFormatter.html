@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="format-detection" content="email=no"/>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0"/>
+    <link rel="stylesheet" type="text/css" href="http://static.alipayobjects.com/amui/base/1.0.1/amui-https.css"
+          media="all">
+    <link rel="stylesheet" href="lib/test.css"/>
+    <style type="text/css">
+        input {
+            height: 24px;
+            margin: 10px 0;
+            width: 100%;
+            padding: 2px;
+        }
+
+        button {
+            padding: 10px;
+        }
+
+        .test {
+            margin-right: 10px;
+        }
+    </style>
+    <script src="lib/zepto.js"></script>
+    <script type="text/javascript" src="lib/gallery/inputFormatter/inputFormatter.js"></script>
+</head>
+<body>
+<div class="am-header">
+    <h1>inputFormatter Demo</h1>
+</div>
+<div id="tests">
+    <div>
+        每4个字符中一个空格：<input type="text" data-format="4 " value="abcdefghijkmln"/>
+    </div>
+    <div>
+        每3个字符中一个井号：<input type="text" data-format="3#" value="abcdefghijkmln"/>
+    </div>
+</div>
+<div style="margin: 0 15px">
+    <button class="am-button" id="add_input">动态生成一个新的input框</button>
+</div>
+
+
+<script type="text/javascript">
+    $("#add_input").on("click", function () {
+        $("#tests").append('<div class="am-flexbox">' +
+                '<div class="am-flexbox-item">' +
+                '<input type="text" value="fdasfa" data-format="3#" class="test"/></div>' +
+                '<button class="addFormat am-button am-button-sm am-flexbox-item">增加formatter功能</button>' +
+                '</div>');
+    });
+
+    var inputFormatter = window.AW.inputFormatter;
+    $(".addFormat").live("click", function () {
+        inputFormatter.listen($(this).parents(".am-flexbox").find(".test"));
+        $(this).remove();
+    });
+</script>
+</body>
+</html>

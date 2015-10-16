@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Date Demo示例</title>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="format-detection" content="email=no"/>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0"/>
+    <link rel="stylesheet" type="text/css" href="http://static.alipayobjects.com/amui/base/1.0.1/amui-https.css"
+          media="all">
+    <link rel="stylesheet" href="lib/test.css"/>
+    <script src="lib/zepto.js"></script>
+    <script src="lib/test.js"></script>
+    <script src="lib/aj.js"></script>
+</head>
+<body ontouchstart="">
+<div class="am-header">
+    <h1>Date Demo</h1>
+</div>
+<div id="tests"></div>
+<div class="unit tpl" style="display: none">
+    <div class="contain">
+        <p style="font-weight: bold;font-size: 18px">$$name</p>
+        <h5>示例代码</h5>
+
+        <div class="pre">$$code</div>
+
+        <h5>预期结果</h5>
+
+        <div class="predict">$$predict</div>
+        <h5>结果</h5>
+
+        <div class="ret"></div>
+        <a href="javascript:;" onclick="clearRet(this)" class="btn-clear">清除结果</a>
+        <a href="javascript:;" onclick="$$command" class="am-button am-button-sm">运行</a>
+    </div>
+</div>
+
+<script type="text/javascript">
+	function showRet(content) {
+		content = typeof content === "undefined" ? "undefined" : content;
+		content = (typeof content !== "string") ? JSON.stringify(content) : content;
+		$(this).parent().find(".ret").append(AJ.date.format(new Date(), "[yyyy-MM-dd hh:mm:ss]")).append(content).append("<br />");
+	}
+    var testUnits = [
+        {
+            name: "yy-MM-dd",
+            code: 'AJ.date.format(new Date(),"yy-MM-dd")',
+            command: function (context) {
+                showRet.call(context, AJ.date.format(new Date(),"yy-MM-dd"));
+            },
+            predict: function(){
+                return "当天的此格式日期"
+            }
+        },
+        {
+            name: "yyyy-MM-dd",
+            code: 'AJ.date.format(new Date(),"yyyy-MM-dd")',
+            command: function (context) {
+                showRet.call(context, AJ.date.format(new Date(),"yyyy-MM-dd"));
+            },
+            predict: function(){
+                return "当天的此格式日期"
+            }
+        },
+        {
+            name: "yyyy-M-dd",
+            code: 'AJ.date.format(new Date("2014-6-30"),"yyyy-M-dd")',
+            command: function (context) {
+//                var date = new Date("2014-12-24");
+                showRet.call(context, AJ.date.format(new Date("2014-6-30"),"yyyy-M-dd"));
+            },
+            predict: function(){
+                return "2014-6-30的此格式日期"
+            }
+        },
+        {
+            name: "yyyy/M/d hh:mm:ss",
+            code: 'AJ.date.format(new Date(),"yyyy/M/d hh:mm:ss")',
+            command: function (context) {
+//                var date = new Date("2014-12-24");
+                showRet.call(context, AJ.date.format(new Date(),"yyyy/M/d hh:mm:ss"));
+            },
+            predict: function(){
+                return "此格式日期"
+            }
+        },
+        {
+            name: "date now",
+            code: 'AJ.date.now()',
+            command: function (context) {
+//                var date = new Date("2014-12-24");
+                showRet.call(context, AJ.date.now());
+            },
+            predict: function(){
+                return "返回当前日期的时间戳"
+            }
+        }
+    ];
+
+    createUnitLayout();
+</script>
+</body>
+</html>

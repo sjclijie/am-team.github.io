@@ -1,0 +1,134 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>button demo示例</title>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="format-detection" content="email=no"/>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0"/>
+    <link rel="stylesheet" type="text/css" href="http://static.alipayobjects.com/amui/base/1.0.1/amui-https.css"
+          media="all">
+    <link rel="stylesheet" href="lib/test.css"/>
+    <style type="text/css">
+        .buttons {
+            overflow: hidden;
+        }
+
+        .buttons li {
+            /*width: 50%;*/
+            /*float: left;*/
+
+        }
+
+        .buttons button {
+            margin: 10px;
+            border-radius: 3px;
+        }
+
+        .hover {
+            background: #00cc00;
+        }
+
+        a {
+            border: 1px solid #cccccc;
+            display: block;
+            margin: 10px;
+            padding: 5px;
+            color: #000000;
+            background: #ffffff;
+        }
+
+        .new_btn {
+            background: #cccccc;
+        }
+    </style>
+    <script src="lib/zepto.js"></script>
+    <script type="text/javascript" src="lib/gallery/button/button.js"></script>
+</head>
+<body>
+<div class="am-header">
+    <h1>Button Demo</h1>
+</div>
+<div id="tests">
+    <h3>按钮列表</h3>
+    <ul class="buttons">
+        <li>
+            <a data-active-class="hover" href="javascript:;">测试按钮</a>
+        </li>
+        <li>
+            <a data-active-class="hover" href="javascript:;">测试按钮</a>
+        </li>
+        <li>
+            <a data-active-class="hover" href="javascript:;">测试按钮</a>
+        </li>
+        <li>
+            <a data-active-class="hover" href="javascript:;">测试按钮</a>
+        </li>
+        <li>
+            <a data-active-class="hover" href="javascript:;">测试按钮</a>
+        </li>
+        <li>
+            <a data-active-class="hover" href="javascript:;">测试按钮</a>
+        </li>
+        <li>
+            <a data-active-class="hover" href="javascript:;">测试按钮</a>
+        </li>
+        <li>
+            <a data-active-class="hover" href="javascript:;">测试按钮</a>
+        </li>
+        <li>
+            <a data-active-class="hover" href="javascript:;">测试按钮</a>
+        </li>
+        <li>
+            <a data-active-class="hover" href="javascript:;">测试按钮</a>
+        </li>
+        <li>
+            <a data-active-class="hover" href="javascript:;">测试按钮</a>
+        </li>
+        <li>
+            <a data-active-class="hover" href="javascript:;">测试按钮</a>
+        </li>
+        <li>
+            <a data-active-class="hover" href="javascript:;">测试按钮</a>
+        </li>
+        <li>
+            <a data-active-class="hover" href="javascript:;">测试按钮</a>
+        </li>
+        <li>
+            <a data-active-class="hover" href="javascript:;">测试按钮</a>
+        </li>
+    </ul>
+
+    <h5>动态增加按钮</h5>
+    <a href="javascript:;" class="am-button" id="add_btn">增加按钮</a>
+
+    <h5>初始化新建按钮</h5>
+    <a href="javascript:;" class="am-button" id="init_btn">初始化按钮</a>
+</div>
+
+
+<script type="text/javascript">
+    $("#add_btn").bind("click", function () {
+        $('.buttons').append('<li><a data-active-class="hover" class="new_btn" href="javascript:;">测试按钮</a></li>');
+    });
+
+    $("#init_btn").bind("click", function () {
+        var btn = new AW.button(".new_btn");
+        btn.tap(function () {
+                    console.log("clicked");
+                    var count = $(this).data("count");
+                    count = count === undefined ? 0 : parseInt(count);
+                    $(this).data("count", ++count);
+                    $(this).html("测试按钮 " + count + "次");
+                },
+                1000,
+                true
+        );
+        $(".new_btn").removeClass('new_btn');
+    });
+</script>
+</body>
+</html>

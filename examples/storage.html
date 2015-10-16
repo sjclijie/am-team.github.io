@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Storage Demo示例</title>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="format-detection" content="email=no"/>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0"/>
+    <link rel="stylesheet" type="text/css" href="http://static.alipayobjects.com/amui/base/1.0.1/amui-https.css"
+          media="all">
+    <link rel="stylesheet" href="lib/test.css"/>
+    <script src="lib/zepto.js"></script>
+    <script src="lib/test.js"></script>
+    <script src="lib/aj.js"></script>
+</head>
+<body ontouchstart="">
+<div class="am-header">
+    <h1>Storage Demo</h1>
+</div>
+
+<div id="tests"></div>
+<div class="unit tpl" style="display: none">
+    <div class="contain">
+        <p style="font-weight: bold;font-size: 18px">$$name</p>
+        <h5>示例代码</h5>
+
+        <div class="pre">$$code</div>
+
+        <h5>预期结果</h5>
+
+        <div class="predict">$$predict</div>
+        <h5>结果</h5>
+
+        <div class="ret"></div>
+        <a href="javascript:;" onclick="clearRet(this)" class="btn-clear">清除结果</a>
+        <a href="javascript:;" onclick="$$command" class="am-button am-button-sm">运行</a>
+    </div>
+</div>
+<script type="text/javascript">
+    var testUnits = [
+        {
+            name: "清除所有缓存",
+            code: "AJ.storage.clear()",
+            command: function (context) {
+                AJ.storage.clear();
+                showRet.call(context, localStorage.length);
+            },
+            predict: "0"
+        },
+        {
+            name: "设置缓存 key1，value1",
+            code: 'AJ.storage.set("key1", "value1");',
+            command: function (context) {
+                AJ.storage.set("key1", "value1");
+                showRet.call(context, localStorage["key1"]);
+            },
+            predict: function () {
+                return "value1";
+            }
+        },
+        {
+            name: "设置过期缓存 绝对时间 key1 对象 当前时间后三秒的date对象",
+            code: 'AJ.storage.set("key1", {a: "2a", b: true, c: 34, d: [1, 2, "a"]}, date);',
+            command: function (context) {
+                var date = new Date((+new Date()) + 3000);
+                AJ.storage.set("key1", {a: "2a", b: true, c: 34, d: [1, 2, "a"]}, date);
+                showRet.call(context, "即时获取：" + AJ.storage.get("key1"));
+                setTimeout(function () {
+                    showRet.call(context, "<br />3秒钟后：" + AJ.storage.get("key1"));
+                }, 3000);
+            },
+            predict: function () {
+                return '即时获取值为 {a: "2a", b: true, c: 34, d: [1, 2, "a"]} ,三秒钟后 undefined';
+            }
+        },
+        {
+            name: "设置过期缓存 相对时间 key2 value2 当起时间后8秒的时间戳",
+            code: 'AJ.storage.set("key2", "value2", 8);',
+            command: function (context) {
+                AJ.storage.set("key2", "value2", 8);
+                showRet.call(context, "即时获取：" + AJ.storage.get("key2"));
+                setTimeout(function () {
+                    showRet.call(context, "<br />8秒钟后：" + AJ.storage.get("key2"));
+                }, 8000);
+            },
+            predict: function () {
+                return "即时获取值为 value2 ,三秒钟后 undefined";
+            }
+        },
+        {
+            name: "读取key1缓存",
+            code: 'AJ.storage.get("key1")',
+            command: function (context) {
+                showRet.call(context, AJ.storage.get("key1"));
+            },
+            predict: '当前的设置值'
+        },
+        {
+            name: "清除key1缓存,通过remove方法",
+            code: 'AJ.storage.remove("key1");',
+            command: function (context) {
+                AJ.storage.remove("key1");
+                showRet.call(context, AJ.storage.get("key1"));
+            },
+            predict: 'undefined'
+        },
+        {
+            name: "查询key1的过期日期",
+            code: 'AJ.storage.getExpiredDate("key1")',
+            command: function (context) {
+                showRet.call(context, AJ.storage.getExpiredDate("key1"));
+            },
+            predict: '没有值或者过期 返回undefined,否则则返回过期日期'
+        }
+    ];
+
+    createUnitLayout();
+</script>
+</body>
+</html>

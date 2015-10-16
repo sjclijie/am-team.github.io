@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>加载中　示例</title>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="format-detection" content="telephone=no,email=no"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0"/>
+    <link rel="stylesheet" type="text/css" href="https://a.alipayobjects.com/anima/dpl/1.1.0/amui.css" media="all">
+    <link rel="stylesheet" href="lib/test.css"/>
+    <!--<script charset="utf-8" src="../src/AWMod.js?../src/gallery/loading/loading.js"></script>-->
+    <script type="text/javascript" src="lib/gallery/loading/loading.js"></script>
+    <style>
+        .am-list-item-form {
+            position: relative;
+        }
+        .am-list-arrow {
+            position: absolute;
+            right: 10px;
+            top: 8px;
+        }
+    </style>
+</head>
+<body>
+<div class="am-header">
+    <h1>加载中　示例</h1>
+</div>
+<div class="am-content">
+    <div class="am-list">
+        <div class="am-list-item am-list-item-form">
+            <div class="am-list-label">message:</div>
+            <div class="am-list-control">
+                <input type="text" id="message" placeholder="请填写message" value="加载中...">
+            </div>
+        </div>
+        <div class="am-list-item am-list-item-form">
+            <div class="am-list-label">showDelay(ms):</div>
+            <div class="am-list-control">
+                <select id="showDelay">
+                    <option value="0">default: 0</option>
+                    <option value="1000">1000</option>
+                    <option value="2000">2000</option>
+                    <option value="4000">4000</option>
+                    <option value="6000">6000</option>
+                </select>
+            </div>
+            <div class="am-list-arrow"><span class="am-icon-arrow-vertical"></span></div>
+        </div>
+        <div class="am-list-item am-list-item-form">
+            <div class="am-list-label">callContainer:</div>
+            <div class="am-list-control">
+                <select id="callContainer">
+                    <option value="true">default: true</option>
+                    <option value="false">false</option>
+                </select>
+            </div>
+            <div class="am-list-arrow"><span class="am-icon-arrow-vertical"></span></div>
+        </div>
+    </div>
+
+
+    <div class="am-flexbox am-flexbox-average">
+        <div class="am-flexbox-item">
+            <button type="button" class="J-loading-show am-button ">点我显示</button>
+        </div>
+        <div class="am-flexbox-item">
+            <button type="button" class="J-loading-hide am-button am-button-white">点我隐藏</button>
+        </div>
+    </div>
+
+<pre class="am-ft-sm">
+AW.loading.show('加载中...');
+AW.loading.show({
+    message: '加载中...',
+    showDelay: '2500',
+    callContainer: true
+});
+AW.loading.hide();
+</pre>
+</div>
+<script type="text/javascript">
+    document.querySelector('.J-loading-show').addEventListener("click", function (ele) {
+        AW.loading.show({
+            message: document.querySelector("#message").value,
+            showDelay: document.querySelector("#showDelay").value,
+            callContainer: document.querySelector("#callContainer").value
+        });
+    }, false);
+    document.querySelector('.J-loading-hide').addEventListener("click", function (ele) {
+        AW.loading.hide();
+    }, false);
+</script>
+
+
+
+
+
+</body>
+</html>

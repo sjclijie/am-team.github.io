@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>对话框demo示例</title>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="format-detection" content="telephone=no,email=no"/>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0"/>
+    <link rel="stylesheet" type="text/css" href="https://a.alipayobjects.com/anima/dpl/1.1.0/amui.css" media="all">
+    <!--<script charset="utf-8" src="../src/AWMod.js?../src/gallery/dialog/dialog.js"></script>-->
+    <link rel="stylesheet" href="lib/test.css"/>
+    <script type="text/javascript" src="lib/gallery/dialog/dialog.js"></script>
+    <style>
+        .am-list-item-form {
+            position: relative;
+        }
+        .am-list-arrow {
+            position: absolute;
+            right: 10px;
+            top: 8px;
+        }
+    </style>
+</head>
+<body>
+<div class="am-header">
+    <h1>对话框demo示例</h1>
+</div>
+<div id="tests">
+    <div class="am-content">
+        <div class="am-list">
+            <div class="am-list-item am-list-item-form">
+                <div class="am-list-label">title:</div>
+                <div class="am-list-control">
+                    <input type="text" id="title" placeholder="请填写title" value="亲～">
+                </div>
+            </div>
+            <div class="am-list-item am-list-item-form">
+                <div class="am-list-label">message:</div>
+                <div class="am-list-control">
+                    <input type="text" id="message" placeholder="请填写message" value="确定要这么干吗？">
+                </div>
+            </div>
+            <div class="am-list-item am-list-item-form">
+                <div class="am-list-label">type:</div>
+                <div class="am-list-control">
+                    <select id="type">
+                        <option value="alert">default: alert</option>
+                        <option value="confirm">confirm</option>
+                    </select>
+                </div>
+                <div class="am-list-arrow"><span class="am-icon-arrow-vertical"></span></div>
+            </div>
+            <div class="am-list-item am-list-item-form">
+                <div class="am-list-label">okButton:</div>
+                <div class="am-list-control">
+                    <input type="text" id="okButton" placeholder="请填写okButton" value="确定">
+                </div>
+            </div>
+            <div class="am-list-item am-list-item-form">
+                <div class="am-list-label">cancelButton:</div>
+                <div class="am-list-control">
+                    <input type="text" id="cancelButton" placeholder="请填写cancelButton" value="取消">
+                </div>
+            </div>
+            <div class="am-list-item am-list-item-form">
+                <div class="am-list-label">callContainer:</div>
+                <div class="am-list-control">
+                    <select id="callContainer">
+                        <option value="true">default: true</option>
+                        <option value="false">false</option>
+                    </select>
+                </div>
+                <div class="am-list-arrow"><span class="am-icon-arrow-vertical"></span></div>
+            </div>
+        </div>
+        <div class="am-list-item am-list-item-form">
+            <h5>callback</h5>
+            <textarea id="callback" style="width: 100%; height: 60px;text-align: left;">console.log(result.ok);
+                AW.dialog.hide();</textarea>
+        </div>
+        <div class="am-flexbox am-flexbox-average">
+            <div class="am-flexbox-item">
+                <button type="button" class="J-dialog-show am-button ">点我显示</button>
+            </div>
+        </div>
+        <div class="am-flexbox am-flexbox-average" style="margin-top: 10px;">
+            <div class="am-flexbox-item">
+                <button type="button" class="J-dialog-alert am-button ">一键alert</button>
+            </div>
+            <div class="am-flexbox-item">
+                <button type="button" class="J-dialog-confirm am-button">一键confirm</button>
+            </div>
+        </div>
+<pre class="am-ft-sm">
+AW.dialog.show({
+    title: '亲',
+    message: '确定要这么干吧',
+    type : 'alert',
+    okButton: '支付',
+    cancelButton: '取消',
+    callContainer: true
+}, function(result){
+    console.log(result.ok)
+});
+AW.dialog.alert('确定要这么干吧');
+AW.dialog.confirm('确定要这么干吧');
+AW.dialog.hide();
+
+点击确定之后回调：
+AW.dialog.confirm('确定要这么干吧', function(result){
+    console.log(result.ok)
+});
+</pre>
+    </div>
+</div>
+
+<script type="text/javascript">
+    document.querySelector('.J-dialog-show').addEventListener("click", function (ele) {
+        AW.dialog.show({
+            title: document.querySelector("#title").value,
+            message: document.querySelector("#message").value,
+            type: document.querySelector("#type").value,
+            okButton: document.querySelector("#okButton").value,
+            cancelButton: document.querySelector("#cancelButton").value,
+            callContainer: document.querySelector("#callContainer").value
+        }, function (result) {
+            eval(document.querySelector("#callback").value);
+        });
+    }, false);
+    document.querySelector('.J-dialog-alert').addEventListener("click", function (ele) {
+        AW.dialog.alert('这是个alert，没有取消按钮', function (result) {
+            eval(document.querySelector("#callback").value);
+        });
+    }, false);
+    document.querySelector('.J-dialog-confirm').addEventListener("click", function (ele) {
+        AW.dialog.confirm('这是个confirm，有取消按钮', function (result) {
+            eval(document.querySelector("#callback").value);
+        });
+    }, false);
+</script>
+</body>
+</html>

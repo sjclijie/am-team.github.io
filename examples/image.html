@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>图片转码测试</title>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="format-detection" content="email=no"/>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0"/>
+    <link rel="stylesheet" type="text/css" href="http://static.alipayobjects.com/amui/base/1.0.1/amui-https.css"
+          media="all">
+    <link rel="stylesheet" href="lib/test.css"/>
+    <script src="lib/zepto.js"></script>
+    <script src="lib/test.js"></script>
+    <script src="lib/aj.js"></script>
+</head>
+<body ontouchstart="">
+<div class="am-header">
+    <h1>图片转码测试</h1>
+</div>
+<h5>测试图片</h5>
+<img src="node.png" alt="node"/>
+
+<div id="tests"></div>
+<div class="unit tpl" style="display: none">
+    <div class="contain">
+        <p style="font-weight: bold;font-size: 18px">$$name</p>
+        <h5>示例代码</h5>
+
+        <div class="pre">$$code</div>
+
+        <h5>预期结果</h5>
+
+        <div class="predict">$$predict</div>
+        <h5>结果</h5>
+        <h5>base64的图片</h5>
+        <img class="base64img" style="display: none" alt=""/>
+        <div class="ret"></div>
+        <a href="javascript:;" onclick="clearRet(this)" class="btn-clear">清除结果</a>
+        <a href="javascript:;" onclick="$$command" class="am-button am-button-sm">运行</a>
+    </div>
+</div>
+<script type="text/javascript">
+    var testUnits = [
+        {
+            name: "将node图片base64化",
+            code: 'AJ.image.toBase64("node.png",function(base64Data){ showRet.call(context, base64Data);})',
+            command: function (context) {
+                AJ.image.toBase64("node.png", function (base64Data, error) {
+                    showRet.call(context, error || base64Data.substr(0,300));
+                    if (!error) {
+                        $(".base64img").attr("src", base64Data).show();
+                    }
+                });
+            },
+            predict: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIYAAABlCAYAAACIqZu9AAAgA..."
+        }
+    ];
+
+    createUnitLayout();
+</script>
+</body>
+</html>
